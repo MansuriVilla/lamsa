@@ -1,0 +1,3 @@
+.header .header-inner .header-left a { font-family: var(--lamsa-primary); font-size: 28px; text-align: center; }
+.header .header-inner .header-left a span { display: block; }
+.header .header-inner .header-left a span:nth-child(2) { font-size: 14px; margin-top: 12px; }

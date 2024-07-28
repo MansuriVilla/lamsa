@@ -1,3 +1,4 @@
-.header .header-inner .header-left a { font-family: var(--lamsa-primary); font-size: 28px; text-align: center; }
-.header .header-inner .header-left a span { display: block; }
-.header .header-inner .header-left a span:nth-child(2) { font-size: 14px; margin-top: 12px; }
+.header { background-color: var(--background-color); padding: 29px 15px; }
+.header .header-inner { justify-content: space-between; width: 100%; align-items: center; }
+.header .header-inner .header-left a { font-family: var(--lamsa-primary); font-size: clamp(20px, 4vw + 1rem, 28px); text-align: center; color: var(--neon-green); align-items: center; column-gap: 9.2px; }
+.header .header-inner .header-left a span p:nth-child(2) { font-size: 14px; margin-top: 12px; }

@@ -16,7 +16,7 @@ export default function Footer() {
                       Contact Us
                     </a>
                     <div className="cols">
-                      <ul className="col-ul custom-d-flex">
+                      <ul className="col-ul">
                         <li className="col-li">
                           <a href="#" className="link">
                             Email Here
@@ -50,12 +50,12 @@ export default function Footer() {
                         </li>
                         <li className="col-li">
                           <a href="#" className="link">
-                            Privacy Policy{" "}
+                            Privacy Policy
                           </a>
                         </li>
                         <li className="col-li">
                           <a href="#" className="link">
-                            Why Choose Us{" "}
+                            Why Choose Us
                           </a>
                         </li>
                       </ul>
@@ -68,7 +68,7 @@ export default function Footer() {
                       Follow Us
                     </a>
                     <div className="cols">
-                      <ul className="col-ul">
+                      <ul className="col-ul custom-d-flex">
                         <li className="col-li">
                           <a href="#" className="link">
                             <i className="fa-brands fa-instagram" />

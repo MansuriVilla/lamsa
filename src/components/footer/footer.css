@@ -1,4 +1,4 @@
-.footer { background-color: #303030; padding: 50px; margin-top: 30px; }
+.footer { background-color: var(--background-color); padding: 50px; margin-top: 30px; }
 .footer .footer-inner .footer-top .footer-top-inner .footer-ul { padding: 0px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; }
 .footer .footer-inner .footer-top .footer-top-inner .footer-ul .footer-li { font-size: 20px; font-weight: 600; max-width: 320px; margin: 15px auto; }
 .footer .footer-inner .footer-top .footer-top-inner .footer-ul .footer-li .footer-li-inner .footer-a { color: #ffffff; }

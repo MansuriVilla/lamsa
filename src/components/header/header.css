@@ -1,7 +1,7 @@
 .header { background-color: var(--background-color); }
 .header .header-inner { justify-content: space-between; width: 100%; align-items: center; }
 .header .header-inner  .custom-a { font-family: var(--lamsa-primary); font-size: clamp(20px, 4vw + 1rem, 28px); text-align: center; color: var(--neon-green); align-items: center; column-gap: 9.2px; }
-.header .header-inner  .custom-a span p:nth-child(2) { font-size: 14px; margin-top: 12px; }
+.header .header-inner  .custom-a span img { max-width: 500px; width: 100%; }
 @media only screen and (max-width:991px) {
  .header .header-inner .header-right .custom-d-flex { flex-direction: column; }
 .offcanvas { background-color: #000; }

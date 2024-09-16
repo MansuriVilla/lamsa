@@ -9,6 +9,7 @@ export default function Whoweare() {
         <div className="main__content">
           <Slider />
           <Slider />
+          <Slider />
         </div>
       </div>
     </>

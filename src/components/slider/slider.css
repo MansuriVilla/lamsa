@@ -2,3 +2,4 @@
 .slider__content_main h4 { margin-bottom: 30px; }
 .slider__content_main p { max-width: 712px; width: 100%; font-size: 22px ; line-height: 40px; }
 .slider__section .title { font-size: 52px; font-weight: bold; text-align: center; text-transform: uppercase; }
+.main__content .slider__section:nth-child(2n) .slider__content_main { flex-direction: row-reverse; }

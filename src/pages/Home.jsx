@@ -10,6 +10,7 @@ export default function Home() {
         <Hero />
         <div className="main__content">
           <Slider />
+          <Slider />
         </div>
       </div>
     </>

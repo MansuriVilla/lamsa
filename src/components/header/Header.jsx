@@ -64,7 +64,7 @@ export default function Header() {
                     <Link to="/">WHAT WE DO</Link>
                   </li>
                   <li className="header-li">
-                    <Link to="/">WHO WE ARE</Link>
+                    <Link to="Whoweare">WHO WE ARE</Link>
                   </li>
                   <li className="header-li">
                     <Link to="/">KNOWLEDGE</Link>

@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.esm.js";
 import LogoVector from "../../assets/images/Logo-vector-header.svg";
 import React from "react";
+import { Link } from "react-router-dom";
 import "./header.css";
 
 export default function Header() {
@@ -60,19 +61,19 @@ export default function Header() {
               <div className="header-right ms-auto">
                 <ul className="custom-d-flex">
                   <li className="header-li">
-                    <a href="#">WHAT WE DO</a>
+                    <Link to="/">WHAT WE DO</Link>
                   </li>
                   <li className="header-li">
-                    <a href="#">WHO WE ARE</a>
+                    <Link to="/">WHO WE ARE</Link>
                   </li>
                   <li className="header-li">
-                    <a href="#">KNOWLEDGE</a>
+                    <Link to="/">KNOWLEDGE</Link>
                   </li>
                   <li className="header-li">
-                    <a href="#">SUPPORT</a>
+                    <Link to="/">SUPPORT</Link>
                   </li>
                   <li className="header-li">
-                    <a href="#">BROADBAND SERVICES</a>
+                    <Link to="/">BROADBAND SERVICES</Link>
                   </li>
                 </ul>
               </div>

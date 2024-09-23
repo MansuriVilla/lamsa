@@ -1,5 +1,5 @@
 import React from "react";
-import TempImg from "../../assets/images/TempImg.png";
+import TempImg from "../../assets/images/TempImg.webp";
 import "./slider.css";
 
 export default function Slider() {

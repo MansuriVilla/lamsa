@@ -1,13 +1,13 @@
 import React from "react";
 import Slider from "../components/slider/Slider.jsx";
 import Banner from "../components/banner/Banner.jsx";
-import Background from "../assets/images/who-we-are-hero.png";
+import Background from "../assets/images/TempImg.png";
 
 export default function Whoweare() {
   return (
     <>
       <div className="main">
-        <Banner title="WHO WE ARE" image={Background} />
+        <Banner title="WHAT WE DO" image={Background} />
         <div className="main__content">
           <Slider />
           <Slider />

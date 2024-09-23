@@ -61,7 +61,7 @@ export default function Header() {
               <div className="header-right ms-auto">
                 <ul className="custom-d-flex">
                   <li className="header-li">
-                    <Link to="/">WHAT WE DO</Link>
+                    <Link to="Whatwedo">WHAT WE DO</Link>
                   </li>
                   <li className="header-li">
                     <Link to="Whoweare">WHO WE ARE</Link>

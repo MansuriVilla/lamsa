@@ -1,11 +1,30 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.esm.js";
 import LogoVector from "../../assets/images/Logo-vector-header.svg";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
 
 export default function Header() {
+  useEffect(() => {
+    const header = document.querySelector(".header");
+
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array to run this effect only once when the component mounts
+
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg header-inner">
@@ -46,7 +65,7 @@ export default function Header() {
                 </span>
                 <span>
                   <p>LAMSA INFOSOLUTIONS</p>
-                  <p> Your Safety Net in a Digital World.</p>
+                  <p>Your Safety Net in a Digital World.</p>
                 </span>
               </a>
 

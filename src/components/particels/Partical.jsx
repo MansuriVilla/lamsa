@@ -131,16 +131,7 @@ const ParticlesComponent = (props) => {
     []
   );
 
-  return (
-    <div style={{ width: "100%", height: "400px", position: "relative" }}>
-      <Particles
-        id={props.id}
-        init={particlesLoaded}
-        options={options}
-        style={{ position: "absolute", top: 0, left: 0 }}
-      />
-    </div>
-  );
+  return <Particles id={props.id} init={particlesLoaded} options={options} />;
 };
 
 export default ParticlesComponent;

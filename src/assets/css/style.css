@@ -1,1 +1,2 @@
-.inner_banner { height: 800px; display: flex; justify-content: center; align-items: center; }
+.inner_banner { position: relative; height: 800px; display: flex; justify-content: center; align-items: center; }
+.inner_banner::before { content: ''; position: absolute; display: block; height: 50px; width: 100%; background: linear-gradient(180deg, transparent, #000); bottom: 0; }

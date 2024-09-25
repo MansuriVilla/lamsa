@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
       <div className="footer">
-        <div className="footer-inner">
+        <div className="footer-inner custom-container">
           <div className="footer-top">
             <div className="footer-top-inner">
               <ul className="footer-ul custom-d-flex">

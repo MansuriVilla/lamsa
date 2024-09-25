@@ -1,6 +1,6 @@
 .footer { background-color: var(--background-color); padding: 50px; }
 .footer .footer-inner .footer-top .footer-top-inner .footer-ul { padding: 0px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; }
-.footer .footer-inner .footer-top .footer-top-inner .footer-ul .footer-li { font-size: 20px; font-weight: 600; max-width: 320px; margin: 15px auto; }
+.footer .footer-inner .footer-top .footer-top-inner .footer-ul .footer-li { font-size: 20px; font-weight: 600; max-width: 320px; margin: 15px 0; }
 .footer .footer-inner .footer-top .footer-top-inner .footer-ul .footer-li .footer-li-inner .footer-a { color: #ffffff; }
 .footer .footer-inner .footer-top .footer-top-inner .footer-ul .footer-li .footer-li-inner .cols { margin: 15px 0px 10px; }
 .footer .footer-inner .footer-top .footer-top-inner .footer-ul .footer-li .footer-li-inner .cols .col-ul { justify-content: center; padding: 0px; flex-wrap: wrap; }

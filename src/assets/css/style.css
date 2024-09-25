@@ -4,5 +4,5 @@
 .level { color: #ffffff; display: flex; }
 .level .heading { text-wrap: nowrap; font-size: 30px; margin-top: 10px; margin-bottom: 5px; line-height: 30px; }
 .title { color: #fff; font-size: 40px; line-height: 40px; font-weight: 600; }
-.level-item.has-text-centered { text-align: center; height: 100%; flex: 1; border-right: 3px solid #fff; padding: 100px; }
+.level-item.has-text-centered { text-align: center; height: 100%; flex: 1; border-right: 3px solid #fff; padding: 45px 100px; }
 .level-item.has-text-centered:nth-child(4) { border-right: 0px; }

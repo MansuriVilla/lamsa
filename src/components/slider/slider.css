@@ -1,4 +1,4 @@
-.slider__content_main { display: flex; justify-content: space-between; width: 100%; align-items: center; }
+.slider__content_main { display: flex; flex-wrap: wrap; justify-content: space-between; width: 100%; align-items: center; }
 .slider__content_main h4 { margin-bottom: 30px; }
 .slider__content_main p { max-width: 712px; width: 100%; font-size: 22px ; line-height: 40px; }
 .slider__section .title { font-size: 52px; line-height: 52px; font-weight: bold; text-align: center; text-transform: uppercase; }

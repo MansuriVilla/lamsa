@@ -1,5 +1,5 @@
 .slider__content_main { display: flex; flex-wrap: wrap; justify-content: space-between; width: 100%; align-items: center; }
-.slider__content_main h4 { margin-bottom: 30px; }
-.slider__content_main p { max-width: 712px; width: 100%; font-size: 22px ; line-height: 40px; }
-.slider__section .title { font-size: 52px; line-height: 52px; font-weight: bold; text-align: center; text-transform: uppercase; }
+.slider__content_main h4 { margin-bottom: clamp(15px, 4vw, 30px); }
+.slider__content_main p { max-width: clamp(450px, 50vw, 712px); width: 100%; font-size: clamp(16px, 3vw, 22px) ; line-height: normal; }
+.slider__section .title { font-size: clamp(26px, 5vw, 56px); line-height: clamp(26px, 5vw, 56px); font-weight: bold; text-align: center; text-transform: uppercase; }
 .main__content .slider__section:nth-child(2n) .slider__content_main { flex-direction: row-reverse; }

@@ -23,7 +23,7 @@
 @media only screen and (max-width:768px) {
 
     .navbar .custom-container{padding: 0 10px;}
-    .header .header-inner{padding: clamp(15px,2vw,45px) 0;}
+    
     .slider__content_main{justify-content: center; flex-wrap: wrap-reverse;} 
     .slider_left {
         text-align: center;

@@ -10,7 +10,7 @@ const ServicesPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/src/data/services.json")
+    fetch("/services.json")
       .then((response) => response.json())
       .then((data) => {
         const selectedService = data.services.find((s) => s.slug === slug);

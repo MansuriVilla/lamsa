@@ -11,7 +11,7 @@ export default function Header() {
 
   useEffect(() => {
     // Fetch services from src/data/services.json
-    fetch("/src/data/services.json")
+    fetch("/services.json")
       .then((response) => response.json())
       .then((data) => setServices(data.services))
       .catch((error) => console.error("Error fetching services:", error));

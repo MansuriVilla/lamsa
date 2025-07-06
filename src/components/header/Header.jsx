@@ -147,7 +147,8 @@ export default function Header() {
                     className="header-li menu-item-has-children"
                     style={{ position: "relative" }}
                   >
-                    <span
+                    <a
+                      href="javascript:void(0)"
                       style={{
                         cursor: "pointer",
                         display: "flex",
@@ -184,7 +185,7 @@ export default function Header() {
                           </g>
                         </svg>
                       </span>
-                    </span>
+                    </a>
                     <ul
                       className="sub-menu services-dropdown-menu"
                       style={{

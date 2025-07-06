@@ -1,0 +1,72 @@
+{
+  "services": [
+    {
+      "slug": "next-generation-security",
+      "title": "Next Generation Security",
+      "description_title": "LAMSA INFOSOLUTIONS offers a robust Access Control system that enables efficient management of your facility by monitoring and regulating access to key areas—such as main entrances, secure rooms, elevators, stairwells, and other restricted doors. This is particularly beneficial for businesses where accurate employee attendance tracking is essential to operational efficiency. With integrated time and attendance features, companies can easily monitor, manage, and generate detailed reports on employee attendance.",
+      "description": "In addition, keyless entry systems provide a secure and convenient way to enhance employee safety, manage turnover, and protect critical company infrastructure from both internal and external threats. As a component of a comprehensive business security alarm system, access control can significantly reduce costs by eliminating the need to re-key locks whenever an employee leaves the organization.",
+      "bottom_title": "Access Control with Face Identification",
+      "bottom_description": "LAMSA INFOSOLUTIONS combines the advantages of a CCTV system with advanced Access Control Alarm Software. This integrated solution captures user images during access events and securely stores them in a centralized database. Administrators can review these images along with detailed alarm logs and have the ability to monitor live CCTV footage at each access point in real time—ensuring complete security and visibility across all doors.",
+      "icon": "🌐",
+      "blocks": [
+        {
+          "block_title": "Types of Access Control Solutions Offered",
+          "details": [
+            "Master-Slave Configuration – Centralized control with multiple connected devices managed by a single master unit.",
+            "Standalone Reader/Controller – Independent access control units ideal for smaller installations or specific entry points.",
+            "Elevator Access Control – Restricts and monitors access to specific floors, enhancing vertical building security.",
+            "Face Recognition Access Control – Advanced system using facial identification for secure and contactless entry.",
+            "Visitor Management System – Efficiently tracks, monitors, and manages visitor entry for improved facility security."
+          ]
+        },
+        {
+          "block_title": "Types of Equipment Used in Access Control Systems",
+          "details": [
+            "Access Control Panels – Central processing units for managing multiple access points (optional based on system design).",
+            "Access Readers – Devices for authentication, including Biometric, Card-Based, and PIN-Based options.",
+            "Electro-Magnetic Locks – Secure locking mechanisms activated electronically for controlled entry.",
+            "Access Control & Time Attendance Software – Comprehensive platform for managing user access, monitoring entries, and tracking employee attendance."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "mobile-app-development",
+      "title": "Mobile App Development",
+      "description_title": "LAMSA INFOSOLUTIONS offers a robust Access Control system that enables efficient management of your facility by monitoring and regulating access to key areas—such as main entrances, secure rooms, elevators, stairwells, and other restricted doors. This is particularly beneficial for businesses where accurate employee attendance tracking is essential to operational efficiency. With integrated time and attendance features, companies can easily monitor, manage, and generate detailed reports on employee attendance.",
+      "description": "",
+      "bottom_title": "",
+      "bottom_description": "",
+      "icon": "📱",
+      "blocks": [
+        {
+          "block_title": "Technical Details",
+          "details": [
+            "User-friendly interfaces",
+            "Cross-platform compatibility",
+            "App store deployment"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cloud-solutions",
+      "title": "Cloud Solutions",
+      "description_title": "LAMSA INFOSOLUTIONS offers a robust Access Control system that enables efficient management of your facility by monitoring and regulating access to key areas—such as main entrances, secure rooms, elevators, stairwells, and other restricted doors. This is particularly beneficial for businesses where accurate employee attendance tracking is essential to operational efficiency. With integrated time and attendance features, companies can easily monitor, manage, and generate detailed reports on employee attendance.",
+      "description": "In addition, keyless entry systems provide a secure and convenient way to enhance employee safety, manage turnover, and protect critical company infrastructure from both internal and external threats. As a component of a comprehensive business security alarm system, access control can significantly reduce costs by eliminating the need to re-key locks whenever an employee leaves the organization.",
+      "bottom_title": "",
+      "bottom_description": "",
+      "icon": "☁️",
+      "blocks": [
+        {
+          "block_title": "Technical Details",
+          "details": [
+            "AWS, Azure, and Google Cloud",
+            "Serverless architecture",
+            "Data migration and management"
+          ]
+        }
+      ]
+    }
+  ]
+}

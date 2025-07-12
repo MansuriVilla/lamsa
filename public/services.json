@@ -31,12 +31,12 @@
       ]
     },
     {
-      "slug": "mobile-app-development",
-      "title": "Mobile App Development",
-      "description_title": "LAMSA INFOSOLUTIONS offers a robust Access Control system that enables efficient management of your facility by monitoring and regulating access to key areas—such as main entrances, secure rooms, elevators, stairwells, and other restricted doors. This is particularly beneficial for businesses where accurate employee attendance tracking is essential to operational efficiency. With integrated time and attendance features, companies can easily monitor, manage, and generate detailed reports on employee attendance.",
-      "description": "",
-      "bottom_title": "",
-      "bottom_description": "",
+      "slug": "ict-infrastructures-&-integration",
+      "title": "ICT Infrastructures & Integration",
+      "description_title": "Our Network Infrastructure Planning and Transformation services are designed to help your business achieve optimal performance through cost-effective, efficient, and future-ready network solutions. We deliver seamless and secure infrastructure that is standardized, simplified, and scalable—enabling your organization to unlock new possibilities and drive innovation.",
+      "description": "At LAMSA INFOSOLUTIONS, we provide a unified platform designed to meet a wide range of storage needs—including dynamic tiered storage, virtualization, centralized management, data protection, and archiving. We recognize the importance of performance and high availability across your entire storage environment. To ensure this, we take a comprehensive approach that addresses every factor influencing your storage infrastructure. Our solutions are tailored to deliver reliability, efficiency, and scalability—empowering your business with seamless and secure data management.",
+      "bottom_title": "RTLS (Real-Time Location Systems)",
+      "bottom_description": "An active network is a network that contains an active source – either a voltage source or current source. A passive network is a network that does not contain an active source. ",
       "icon": "📱",
       "blocks": [
         {
@@ -50,21 +50,46 @@
       ]
     },
     {
-      "slug": "cloud-solutions",
-      "title": "Cloud Solutions",
-      "description_title": "LAMSA INFOSOLUTIONS offers a robust Access Control system that enables efficient management of your facility by monitoring and regulating access to key areas—such as main entrances, secure rooms, elevators, stairwells, and other restricted doors. This is particularly beneficial for businesses where accurate employee attendance tracking is essential to operational efficiency. With integrated time and attendance features, companies can easily monitor, manage, and generate detailed reports on employee attendance.",
-      "description": "In addition, keyless entry systems provide a secure and convenient way to enhance employee safety, manage turnover, and protect critical company infrastructure from both internal and external threats. As a component of a comprehensive business security alarm system, access control can significantly reduce costs by eliminating the need to re-key locks whenever an employee leaves the organization.",
+      "slug": "enterprise-network-&-mobility",
+      "title": "Enterprise Network & Mobility",
+      "description_title": "LAMSA INFOSOLUTIONS leverages cutting-edge network technologies to help service providers develop applications that take full advantage of enhanced data speeds and bandwidth. This strategic approach enables them to deliver seamless, high-performance services to their users with increased reliability and efficiency.",
       "bottom_title": "",
       "bottom_description": "",
-      "icon": "☁️",
+      "icon": "",
       "blocks": [
         {
-          "block_title": "Technical Details",
-          "details": [
-            "AWS, Azure, and Google Cloud",
-            "Serverless architecture",
-            "Data migration and management"
-          ]
+          "block_title": "",
+          "details": ["", "", ""]
+        }
+      ]
+    },
+    {
+      "slug": "data-center-and-converged-infrastructure",
+      "title": "Data Center and Converged Infrastructure",
+      "description_title": "LAMSA INFOSOLUTIONS offers a complete, end-to-end solution for planning, designing, building, monitoring, maintaining, and upgrading the entire physical infrastructure of your data center. We specialize in handling complex, high-demand environments that require strategic planning, precision, and reliable execution.",
+      "description": "We understand that data center migration is often a once-in-a-career event for most IT professionals—and executing it successfully demands a high level of expertise. That’s why our experienced team of consultants works closely with you to plan, design, build, and manage both existing and future facilities.",
+      "bottom_title": "",
+      "bottom_description": "From construction to ongoing maintenance and upgrades, we ensure your data center operations run smoothly—delivering peace of mind and long-term value.",
+      "icon": "",
+      "blocks": [
+        {
+          "block_title": "",
+          "details": ["", "", ""]
+        }
+      ]
+    },
+    {
+      "slug": "facility-maintenance",
+      "title": "Facility Maintenance",
+      "description_title": " A spectrum of activities, the IT Service Management is directed by policies, organized and structured in processes and supporting procedures – that are performed by an organization to design, plan, deliver, operate and control information technology (IT) services offered to customers. At Meridian, we implement IT services that meet our customers' needs through an appropriate mix of people, process and information technology. ",
+      "description": "At LAMSA INFOSOLUTIONS, we implement IT service solutions that are tailored to meet our clients’ specific needs—leveraging the right combination of people, processes, and technology to ensure consistent, efficient, and value-driven service delivery.",
+      "bottom_title": "Elevator Control System:",
+      "bottom_description": "The Elevator Access Control System is a smart technology designed to manage and restrict access to different floors within a building. Each cardholder is assigned specific floor access permissions, defining which levels they are authorized to reach. You can configure the system to allow access to designated floors while denying entry to others, ensuring enhanced security and controlled movement throughout the facility.",
+      "icon": "",
+      "blocks": [
+        {
+          "block_title": "",
+          "details": ["", "", ""]
         }
       ]
     }

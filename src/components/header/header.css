@@ -5,10 +5,13 @@
 .header .header-inner  .custom-a { font-family: var(--lamsa-primary); padding: 0; margin: 0; font-size: clamp(20px, 4vw + 1rem, 28px); text-align: center; color: var(--neon-green); align-items: center; column-gap: 9.2px; }
 .header .header-inner  .custom-a span img { max-width: clamp(200px, 34vw, 500px); width: 100%; }
 #offcanvasNavbarLabel span:nth-child(2) { display: none; }
-.header-li a { padding: 20px 0; }
+.header-li a { padding: 20px 0; transition: 0.3s all linear; }
 .services-dropdown-menu .dropdown-item { padding: 10px 20px; color: #fff; text-decoration: none; display: block; transition: background 0.2s; }
 .services-dropdown-menu .dropdown-item:hover { background: #151515; color: var(--neon-green); }
 .offcanvas { color: #fff; }
+.header-li a span svg { fill: #fff; transition: 0.3s all linear; }
+.header-li a.site_megaMenu__Active { color: var(--neon-green); }
+.header-li a.site_megaMenu__Active span svg { transform: scaleY(-1); fill: var(--neon-green); }
 @media only screen and (max-width:991px) {
  .offcanvas.offcanvas-end { min-height: 100vh; }
 .header .header-inner .header-right .custom-d-flex { flex-direction: column; }

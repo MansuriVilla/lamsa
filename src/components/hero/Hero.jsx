@@ -10,8 +10,8 @@ export default function Hero() {
         <div className="hero__content">
           <h1>Network Services</h1>
           <p>
-            Ishan Technologies provides seamless, high-speed network
-            connectivity across India.
+            LAMSA INFOSOLUTIONS: Connecting India with Seamless, High-Speed
+            Networks
           </p>
           <div className="theme_cta">
             <a href="#" className="cta">

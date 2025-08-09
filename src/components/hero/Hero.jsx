@@ -1,4 +1,3 @@
-import React from "react";
 import ParticlesComponent from "../particels/Partical.jsx";
 import "./hero.css";
 

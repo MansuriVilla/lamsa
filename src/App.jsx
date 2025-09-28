@@ -10,6 +10,7 @@ import Footer from "./components/footer/Footer";
 import Home from "./pages/Home";
 import Whatwedo from "./pages/Whatwedo.jsx";
 import Whoweare from "./pages/whoweeare.jsx";
+import Support from "./pages/Support.jsx";
 import ServicesPage from "./pages/ServicDetail.jsx";
 import "./assets/css/App.css";
 import "./assets/js/app.js";
@@ -61,6 +62,7 @@ export default function App() {
         <Route path="/Whatwedo" element={<Whatwedo />} />
         <Route path="/Whoweare" element={<Whoweare />} />
         <Route path="/services/:slug" element={<ServicesPage />} />
+        <Route path="/support" element={<Support />} />
       </Routes>
       <Footer />
     </Router>

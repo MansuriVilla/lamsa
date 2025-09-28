@@ -218,7 +218,7 @@ export default function Header() {
                     <Link to="/">KNOWLEDGE</Link>
                   </li>
                   <li className="header-li">
-                    <Link to="/">SUPPORT</Link>
+                    <Link to="/support">SUPPORT</Link>
                   </li>
                 </ul>
               </div>

@@ -45,14 +45,16 @@ const ServicesPage = () => {
     <>
       <Banner title={service.title} image={Background} />
       <div className="custom-container service_page">
-        <section className={`service_top service_${service.slug}-top`}>
+        <div className="service_page--inner ">
+
+        <div className={`service_top service_${service.slug}-top`}>
           <div className="custom-d-flex flex-column">
             {service.description_title && (
               <h2 className="h3">{service.description_title}</h2>
             )}
             {service.description && <p className="h3">{service.description}</p>}
           </div>
-        </section>
+        </div>
         {validBlocks.length > 0 && (
           <div className={`service_center service_${service.slug}-center`}>
             <div className="custom-d-flex">
@@ -90,14 +92,15 @@ const ServicesPage = () => {
           </div>
         )}
 
-        <section className={`service_bottom service_${service.slug}-bottom`}>
+        <div className={`service_bottom service_${service.slug}-bottom`}>
           <h4 className="service_bottom-title">{service.bottom_title}</h4>
           {service.bottom_description && (
             <p className="service_bottom-description">
               {service.bottom_description}
             </p>
           )}
-        </section>
+        </div>
+        </div>
       </div>
     </>
   );

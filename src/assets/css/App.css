@@ -3,10 +3,63 @@ body { background-color: rgb(0, 0, 0); margin: 0px; padding: 0px; box-sizing: bo
 .custom-container { max-width: 1660px; margin: 0px auto; width: 100%; padding: 0px 30px; }
 .custom-d-flex { display: flex; gap: 20px; }
 .flex-column { flex-direction: column; }
-.service_page { display: flex; flex-direction: column; align-items: center; justify-content: center; gap:100px; }
+.service_page--inner { display: flex; flex-direction: column; align-items: center; justify-content: center; gap:100px; padding: 100px 0;  }
 .list_area .service_details-item { list-style: disc; margin-left: clamp(20px,2vw,50px); }
 .service_blocks { max-width: 1280px; }
 .service_blocks .service-block { flex: 1; }
 #customParticales canvas { position: relative; z-index: -1; height: auto !important; }
 .service_bottom-title { color: var(--neon-green); margin-bottom: 15px; }
 .service_block-title { font-size: 24px; }
+.banner__title{max-width: 900px; width: 100%;}
+.form_group input{border-bottom: 1px solid #00ff00;}
+
+/*------------------------------
+    Form Styles
+-----------------------*/
+.site_form { display: flex; padding: 100px 20px;  justify-content: center; align-items: center; flex-direction: column; -ms-flex-direction: column; width: 100%; gap: 50px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
+.site_input-groups { width: 100%; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px; }
+.site_input-group { width: 100%; position: relative; display: flex; justify-content: center; align-items: flex-start; flex-direction: column; flex: 33%;  border-bottom: 1px solid #0f0; }
+.site_input-group .site_input { max-width: 100%; padding-top: 30px;  color: #fff; width: 100%;   }
+.site_input-group label { position: absolute; left: 20px; }
+.form_textarea label { position: absolute; left: 10px; top: 38px; transform: translateY(-50%); transition: all 0.3s ease; }
+.form_textarea { position: relative; }
+#message { background: transparent; outline: none; box-shadow: none; border-bottom: 1px solid #0f0; }
+
+.form_textarea .site_input { max-width: 100%; width: 100%; border: 0;   }
+.products_lists-checkboxs { gap: 20px; max-width: 900px; display: flex; flex-wrap: wrap;   }
+.site_checkbox-group label { background-color: #000; color: #00ff00;  border: 1px solid #00ff00; padding: 10px 15px; border-radius: 8px; display: block; width: fit-content; cursor: pointer; transition: background-color 0.7s cubic-bezier(0.77, 0, 0.175, 1), color 0.7s cubic-bezier(0.77, 0, 0.175, 1) ; }
+/* .site_checkbox:checked + label { background-color: #000; color: #00ff00; border-color: #00ff00;} */
+.site_checkbox + label:hover { background-color: #101010; }
+.site_checkbox { display: none; }
+.site_input-group label, .footer_input-area label { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #666; pointer-events: none; transition: all 0.3s ease; }
+.site_input:focus + label, .site_input:not(:placeholder-shown) + label { top: 20px; font-size: 12px; color: var(--gray-color); transform: translateY(-50%); }
+.site_input::placeholder { color: transparent; }
+.form_col { width: 100%; }
+.form_col .primary_cta { cursor: pointer; }
+.site_textarea { resize: vertical; font-family: "Lateral Standard", sans-serif; }
+.contact_method-buttons { gap: 15px; }
+.site_form h4 { margin-bottom: 15px; font-size: 20px; }
+.form_container { padding-top: 100px; }
+/* Default error message styles */
+.error-message { display: none; color: #dc3545; font-size: 12px; margin-top: 8px; }
+/* Show error messages for text inputs */
+  .site_input-group.error .error-message { display: block; }
+/* Style input borders */
+  .site_input-group.error .site_input { border-color: #dc3545; }
+/* If you have radio buttons or checkboxes with similar structure */
+  .contact_method-buttons.error .error-message { display: block; }
+.products_lists-checkboxs.error .error-message { display: block; }
+.contact_method-buttons.error .site_checkbox-group label { border-color: #dc3545; }
+.products_lists-checkboxs.error .site_checkbox-group label { border-color: #dc3545; }
+.contact_content.site_flex { justify-content: space-between; align-items: center; max-width: 1600px; margin: 0 auto; }
+.contact_us-container { padding: 100px 0; }
+.contact_contentRight { flex: 50%; }
+.contact_contentLeft { flex: 50%; padding: clamp(15px, 3vw, 50px); }
+.contact_bottomArea_rightBottom .site_flex.site_row { flex-direction: column; gap: 10px; margin-top: 20px; }
+.contact_bottomArea__Right { display: flex; flex-direction: column; gap: clamp(30px, 3vw, 50px); }
+.form_col .primary_cta { cursor: pointer; background: #101010; padding: 10px 30px; color: #0f0; font-weight: 600; text-transform: uppercase; }
+
+.site_input{padding: 30px 10px 10px; }
+@media only screen and (max-width: 768px) {
+ .contact_content.site_flex { flex-wrap: wrap; }
+ }

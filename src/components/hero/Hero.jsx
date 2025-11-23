@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="hero-main">
         <ParticlesComponent id="customParticales" />
         <div className="hero__content">
-          <h1>Network Services</h1>
+          <h1>Cyber Services</h1>
           <p>
             LAMSA INFOSOLUTIONS: Connecting India with Seamless, High-Speed
             Networks

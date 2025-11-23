@@ -1,22 +1,27 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.esm.js";
 import LogoVector from "../../assets/images/Logo-vector-header.svg";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import "./header.css";
 
 export default function Header() {
   const [services, setServices] = useState([]);
+  const headerRef = useRef(null);
+  const menuCleanupRef = useRef([]); // To store cleanup functions
 
   useEffect(() => {
-    // Fetch services from src/data/services.json
     fetch("/services.json")
-      .then((response) => response.json())
-      .then((data) => setServices(data.services))
-      .catch((error) => console.error("Error fetching services:", error));
+      .then((res) => res.json())
+      .then((data) => setServices(data.services || []))
+      .catch((err) => console.error("Error loading services:", err));
+  }, []);
 
-    const header = document.querySelector(".header");
+  // Scroll effect
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
 
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -27,97 +32,99 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // GSAP Mega Menu Animation – safe for HMR
   useEffect(() => {
-    // Setup GSAP animations after services are loaded
-    function animateToAutoHeight(element) {
-      const curHeight = element.offsetHeight;
-      element.style.height = "auto";
-      const autoHeight = element.offsetHeight;
-      element.style.height = curHeight + "px";
-      gsap.to(element, {
-        height: autoHeight,
-        duration: 0.3,
-        ease: "linear",
-      });
-    }
+    const menuItems = headerRef.current?.querySelectorAll(
+      ".menu-item-has-children"
+    );
+    if (!menuItems || services.length === 0) return;
 
-    function closeAllMenus(currentItem) {
-      document.querySelectorAll(".menu-item-has-children").forEach((item) => {
+    // Clear previous listeners
+    menuCleanupRef.current.forEach((cleanup) => cleanup());
+    menuCleanupRef.current = [];
+
+    const animateToAutoHeight = (el) => {
+      const curHeight = el.offsetHeight;
+      el.style.height = "auto";
+      const autoHeight = el.offsetHeight;
+      el.style.height = curHeight + "px";
+      gsap.to(el, { height: autoHeight, duration: 0.3, ease: "power1.out" });
+    };
+
+    const closeAllMenus = (currentItem) => {
+      menuItems.forEach((item) => {
         if (item !== currentItem) {
           const menu = item.querySelector(".sub-menu");
-          const link = item.querySelector(".sub-menu li a");
           if (menu) {
             menu.classList.remove("site_megaMenu__Active");
-            if (link) link.classList.remove("site_megaMenu__Active");
-            gsap.to(menu, { height: 0, duration: 0.3, ease: "linear" });
-            const items = menu.querySelectorAll(".sub-menu li");
-            gsap.to(items, {
-              opacity: 0,
-              y: 20,
-              duration: 0.2,
-              ease: "linear",
-            });
+            gsap.to(menu, { height: 0, duration: 0.3 });
+            const links = menu.querySelectorAll("li");
+            gsap.to(links, { opacity: 0, y: 20, duration: 0.2 });
           }
         }
       });
-    }
+    };
 
-    document.querySelectorAll(".menu-item-has-children").forEach((item) => {
+    menuItems.forEach((item) => {
       const megaMenu = item.querySelector(".sub-menu");
-      const navLink = item.querySelector("li a");
+      const link = item.querySelector("a"); // The main <a> that triggers dropdown
       if (!megaMenu) return;
-      const items = megaMenu.querySelectorAll(".sub-menu li");
+
+      const items = megaMenu.querySelectorAll("li");
       gsap.set(items, { opacity: 0, y: 20 });
 
-      item.addEventListener("mouseenter", () => {
+      const onMouseEnter = () => {
         closeAllMenus(item);
         megaMenu.classList.add("site_megaMenu__Active");
-        if (navLink) navLink.classList.add("site_megaMenu__Active");
+        if (link) link.classList.add("site_megaMenu__Active");
         megaMenu.style.pointerEvents = "auto";
         animateToAutoHeight(megaMenu);
         gsap.to(items, {
           opacity: 1,
           y: 0,
-          duration: 0.2,
-          stagger: 0.1, // Stagger animation restored
-          ease: "linear",
+          duration: 0.3,
+          stagger: 0.05,
+          ease: "power2.out",
         });
-      });
+      };
 
-      item.addEventListener("mouseleave", () => {
-        gsap.to(megaMenu, { height: 0, duration: 0.3, ease: "linear" });
-        gsap.to(items, {
-          opacity: 0,
-          y: 20,
-          duration: 0.2,
-          ease: "linear",
-        });
-        megaMenu.classList.remove("site_megaMenu__Active");
-        if (navLink) navLink.classList.remove("site_megaMenu__Active");
-        megaMenu.style.pointerEvents = "none";
+      const onMouseLeave = () => {
+        gsap.to(megaMenu, { height: 0, duration: 0.3, ease: "power1.in" });
+        gsap.to(items, { opacity: 0, y: 20, duration: 0.2 });
+        setTimeout(() => {
+          megaMenu.classList.remove("site_megaMenu__Active");
+          if (link) link.classList.remove("site_megaMenu__Active");
+          megaMenu.style.pointerEvents = "none";
+        }, 300);
+      };
+
+      item.addEventListener("mouseenter", onMouseEnter);
+      item.addEventListener("mouseleave", onMouseLeave);
+
+      // Store for cleanup
+      menuCleanupRef.current.push(() => {
+        item.removeEventListener("mouseenter", onMouseEnter);
+        item.removeEventListener("mouseleave", onMouseLeave);
       });
     });
-  }, [services]); // Run this effect when services state changes
+
+    return () => {
+      menuCleanupRef.current.forEach((cleanup) => cleanup());
+      menuCleanupRef.current = [];
+    };
+  }, [services]);
 
   return (
-    <div className="header">
+    <div className="header" ref={headerRef}>
       <nav className="navbar navbar-expand-lg header-inner">
         <div className="container-fluid custom-container">
-          <a
-            href="/"
-            className="custom-d-flex navbar-brand custom-a"
-            id="offcanvasNavbarLabel"
-          >
-            <span>
-              <img src={LogoVector} alt="Lamsa Logo" />
-            </span>
-          </a>
+          <Link to="/" className="custom-d-flex navbar-brand custom-a">
+            <img src={LogoVector} alt="Lamsa Logo" />
+          </Link>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -128,85 +135,67 @@ export default function Header() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
           <div
             className="offcanvas offcanvas-end offcanvas-lg"
-            tabIndex={"-1"}
+            tabIndex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
           >
             <div className="offcanvas-body custom-body-offcanvas">
               <div className="header-right ms-auto">
                 <ul className="custom-d-flex">
-                  <li className="header-li">
+                  <li className="header-li" key="whatwedo">
                     <Link to="/Whatwedo">WHAT WE DO</Link>
                   </li>
-                  <li className="header-li">
+                  <li className="header-li" key="whoweare">
                     <Link to="/Whoweare">WHO WE ARE</Link>
                   </li>
+
                   <li
-                    className="header-li menu-item-has-children"
-                    style={{ position: "relative" }}
+                    className="header-li menu-item-has-children position-relative"
+                    key="services"
                   >
-                    <a
-                      href="javascript:void(0)"
-                      style={{
-                        cursor: "pointer",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "5px",
-                        padding: "20px 0",
-                      }}
+                    <Link
+                      to="#"
+                      className="d-flex align-items-center gap-2 py-3"
+                      onClick={(e) => e.preventDefault()}
                     >
-                      SERVICES{" "}
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20px"
-                          height="20px"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="#ffffff"
-                        >
-                          <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-                          <g
-                            id="SVGRepo_tracerCarrier"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="0.096"
-                          />
-                          <g id="SVGRepo_iconCarrier">
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
-                            />
-                          </g>
-                        </svg>
-                      </span>
-                    </a>
+                      SERVICES
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </Link>
+
                     <ul
                       className="sub-menu services-dropdown-menu"
                       style={{
                         position: "absolute",
                         top: "100%",
                         left: 0,
-                        width: "fit-content",
                         background: "var(--background-color)",
-                        boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                        boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+                        borderRadius: "8px",
                         overflow: "hidden",
                         height: 0,
                         pointerEvents: "none",
                         zIndex: 1000,
-                        margin: 0,
-                        padding: 0,
-                        listStyle: "none",
+                        minWidth: "220px",
                       }}
                     >
                       {services.map((service) => (
                         <li key={service.id}>
                           <Link
                             to={`/services/${service.slug}`}
-                            className="dropdown-item"
+                            className="dropdown-item px-4 py-3"
                           >
                             {service.title}
                           </Link>
@@ -214,10 +203,11 @@ export default function Header() {
                       ))}
                     </ul>
                   </li>
-                  <li className="header-li">
+
+                  <li className="header-li" key="knowledge">
                     <Link to="/">KNOWLEDGE</Link>
                   </li>
-                  <li className="header-li">
+                  <li className="header-li" key="support">
                     <Link to="/support">SUPPORT</Link>
                   </li>
                 </ul>

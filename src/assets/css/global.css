@@ -6,3 +6,7 @@ h1 { font-family: 'ROG LyonsType Regular'; font-size: clamp(36px, 6vw, 72px); }
 p { font-family: 'Raleway'; font-size: clamp(16px, 3vw, 24px); line-height: 34px; }
 h4 { color: #fff; font-size: clamp(20px, 5vw, 42px ); font-family: 'Raleway'; font-weight: 800; }
 .main___content { background-color: #000; padding: clamp(25px, 4vw, 50px) 0px; }
+.counter_main {
+  padding: 140px 0;
+  background: #1a1a1a;
+}

@@ -4,6 +4,8 @@ import Slider from "../components/slider/Slider.jsx";
 import sectionImage from "../assets/images/TempImg.webp";
 import ProjectIcon from "../assets/images/project_icon.svg";
 import CountUpWrapper from "../components/countup/CountUpWrapper.jsx";
+import BlogSection from "../components/BlogSection/BlogSection.jsx";
+import TestimonialSection from "../components/testimonials/TestimonialSection.jsx";
 
 export default function Home() {
   const countRefs = useRef([]);
@@ -90,6 +92,8 @@ export default function Home() {
           details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
           sectionImage={sectionImage}
         />
+        <TestimonialSection />
+        <BlogSection />
       </div>
     </div>
   );

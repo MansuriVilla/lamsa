@@ -5,13 +5,14 @@ body { background-color: rgb(0, 0, 0); margin: 0px; padding: 0px; box-sizing: bo
 .flex-column { flex-direction: column; }
 .service_page--inner { display: flex; flex-direction: column; align-items: center; justify-content: center; gap:100px; padding: 100px 0;  }
 .list_area .service_details-item { list-style: disc; margin-left: clamp(20px,2vw,50px); }
-.service_blocks { max-width: 1280px; }
-.service_blocks .service-block { flex: 1; }
+.service_blocks { max-width: 100%; width: 100%; display: grid; grid-template-columns: repeat(auto-fill, minmax(clamp(300px,28vw,560px),1fr));column-gap: 50px;  row-gap: 70px; }
+/* .service_blocks .service-block { flex: 33.33%; } */
 #customParticales canvas { position: relative; z-index: -1; height: auto !important; }
 .service_bottom-title { color: var(--neon-green); margin-bottom: 15px; }
 .service_block-title { font-size: 24px; }
 .banner__title{max-width: 900px; width: 100%;}
 .form_group input{border-bottom: 1px solid #00ff00;}
+.service_center{width: 100%;}
 
 /*------------------------------
     Form Styles

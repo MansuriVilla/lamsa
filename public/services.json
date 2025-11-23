@@ -59,13 +59,14 @@
       "blocks": [
         {
           "block_title": "Key Features and Benefits",
-          "details": ["High-Speed Connectivity: Our solutions leverage advanced network protocols and 5G-ready infrastructure to provide ultra-fast data transfer rates, minimizing latency and enabling real-time application performance.", 
-          "Scalable Network Architecture: We design flexible, future-proof network systems that adapt to growing business demands, supporting seamless scalability without compromising performance.",
-          "Enhanced Reliability: Through redundant network configurations and robust failover mechanisms, our solutions ensure uninterrupted service delivery, even in high-demand environments.",
-          "Optimized Bandwidth Utilization: Our intelligent traffic management systems prioritize critical data flows, maximizing bandwidth efficiency and ensuring optimal performance for mission-critical applications.",
-          "Seamless Mobility: We enable service providers to deliver consistent, high-quality experiences across devices and locations, supporting the increasing demand for mobile and remote access.",
-          "Security-First Approach: Our solutions integrate advanced cybersecurity measures, including encryption, intrusion detection, and secure access controls, to protect sensitive data and ensure compliance with industry standards."
-        ]
+          "details": [
+            "High-Speed Connectivity: Our solutions leverage advanced network protocols and 5G-ready infrastructure to provide ultra-fast data transfer rates, minimizing latency and enabling real-time application performance.",
+            "Scalable Network Architecture: We design flexible, future-proof network systems that adapt to growing business demands, supporting seamless scalability without compromising performance.",
+            "Enhanced Reliability: Through redundant network configurations and robust failover mechanisms, our solutions ensure uninterrupted service delivery, even in high-demand environments.",
+            "Optimized Bandwidth Utilization: Our intelligent traffic management systems prioritize critical data flows, maximizing bandwidth efficiency and ensuring optimal performance for mission-critical applications.",
+            "Seamless Mobility: We enable service providers to deliver consistent, high-quality experiences across devices and locations, supporting the increasing demand for mobile and remote access.",
+            "Security-First Approach: Our solutions integrate advanced cybersecurity measures, including encryption, intrusion detection, and secure access controls, to protect sensitive data and ensure compliance with industry standards."
+          ]
         }
       ]
     },
@@ -88,7 +89,7 @@
       "slug": "facility-maintenance",
       "title": "Facility Maintenance",
       "description_title": " A spectrum of activities, the IT Service Management is directed by policies, organized and structured in processes and supporting procedures – that are performed by an organization to design, plan, deliver, operate and control information technology (IT) services offered to customers. At LAMSA INFOSOLUTIONS, we implement IT services that meet our customers' needs through an appropriate mix of people, process and information technology. ",
-      "description": "At LAMSA INFOSOLUTIONS, we implement IT service solutions that are tailored to meet our clients’ specific needs—leveraging the right combination of people, processes, and technology to ensure consistent, efficient, and value-driven service delivery.",
+      "description": "At LAMSA INFOSOLUTIONS, we implement IT service solutions that are tailored to meet our clients' specific needs—leveraging the right combination of people, processes, and technology to ensure consistent, efficient, and value-driven service delivery.",
       "bottom_title": "Elevator Control System:",
       "bottom_description": "The Elevator Access Control System is a smart technology designed to manage and restrict access to different floors within a building. Each cardholder is assigned specific floor access permissions, defining which levels they are authorized to reach. You can configure the system to allow access to designated floors while denying entry to others, ensuring enhanced security and controlled movement throughout the facility.",
       "icon": "",
@@ -96,6 +97,78 @@
         {
           "block_title": "",
           "details": ["", "", ""]
+        }
+      ]
+    },
+    {
+      "slug": "web-secure-solutions",
+      "title": "Web Secure Solutions",
+      "description_title": "LAMSA INFOSOLUTIONS delivers comprehensive Web Secure Solutions that combine cutting-edge development with enterprise-grade security. We specialize in creating secure, high-performance web applications, mobile apps, and robust cybersecurity infrastructure that protect your digital assets while driving business growth and innovation.",
+      "description": "Our integrated approach brings together expert web development, mobile app development, and cybersecurity services under one unified solution. From building responsive websites and native mobile applications to implementing multi-layered security protocols and 24/7 threat monitoring—we deliver end-to-end digital solutions that are secure by design. Every project leverages the latest technologies, industry best practices, and proactive security measures to ensure your digital presence is both powerful and protected.",
+      "bottom_title": "Complete Digital Ecosystem with Built-In Security",
+      "bottom_description": "We provide a holistic digital solution that seamlessly integrates development and security. Our services include modern web technologies (React, Next.js, Node.js), native and cross-platform mobile development (iOS, Android, React Native, Flutter), and comprehensive cybersecurity measures (SIEM, penetration testing, compliance management). With LAMSA INFOSOLUTIONS, you get a secure, scalable, and future-ready digital infrastructure backed by 24/7 monitoring and expert support.",
+      "icon": "�",
+      "blocks": [
+        {
+          "block_title": "Web Development Services",
+          "details": [
+            "Custom Website Development – Tailored, secure websites built from scratch to match your brand identity and business requirements.",
+            "E-Commerce Solutions – Robust online stores with PCI-DSS compliant payment gateways, inventory management, and fraud prevention.",
+            "Progressive Web Apps (PWA) – App-like experiences with offline capabilities and native performance, secured with HTTPS and CSP.",
+            "Content Management Systems (CMS) – Easy-to-manage platforms with role-based access control and security hardening.",
+            "Web Application Development – Complex, data-driven applications with secure authentication, input validation, and SQL injection protection.",
+            "API Development & Integration – RESTful and GraphQL APIs with OAuth 2.0, rate limiting, and comprehensive security headers."
+          ]
+        },
+        {
+          "block_title": "Mobile App Development Services",
+          "details": [
+            "Native iOS Development – High-performance, secure apps built with Swift and SwiftUI, featuring biometric authentication and encrypted storage.",
+            "Native Android Development – Feature-rich Android apps using Kotlin with ProGuard obfuscation and secure data handling.",
+            "Cross-Platform Development – Cost-effective solutions using React Native or Flutter with unified security architecture for both platforms.",
+            "Enterprise Mobile Apps – Business applications with MDM integration, secure VPN connections, and enterprise-grade authentication.",
+            "E-Commerce Mobile Apps – Shopping apps with secure payment processing, PCI compliance, and fraud detection mechanisms.",
+            "IoT & Connected Apps – Mobile interfaces for smart devices with encrypted communication protocols and secure device pairing."
+          ]
+        },
+        {
+          "block_title": "Cybersecurity Services",
+          "details": [
+            "Security Assessment & Auditing – Comprehensive evaluation of web and mobile applications with OWASP Top 10 vulnerability analysis.",
+            "Penetration Testing – Ethical hacking to identify vulnerabilities in applications, APIs, networks, and mobile platforms.",
+            "Web Application Firewall (WAF) – Advanced filtering and monitoring of HTTP traffic to protect against attacks and bot traffic.",
+            "Managed Security Services (MSS) – 24/7 monitoring, threat detection, and incident response by certified security professionals.",
+            "Security Information & Event Management (SIEM) – Real-time logging, correlation, and analysis of security events across all platforms.",
+            "SSL/TLS Certificate Management – Secure data transmission with industry-standard encryption and automated certificate renewal.",
+            "DDoS Protection – Mitigation strategies to defend against distributed denial-of-service attacks on web and mobile infrastructure.",
+            "Cloud Security – Protection for cloud infrastructure, applications, and data across AWS, Azure, and Google Cloud platforms."
+          ]
+        },
+        {
+          "block_title": "Integrated Security Features",
+          "details": [
+            "Secure Authentication & Authorization – Multi-factor authentication (MFA), biometric login, OAuth 2.0, and JWT token management.",
+            "Data Encryption – End-to-end encryption for data at rest and in transit using AES-256 and TLS 1.3 protocols.",
+            "Vulnerability Management – Continuous scanning, assessment, and patching of security vulnerabilities in web and mobile applications.",
+            "Identity & Access Management (IAM) – Role-based access control (RBAC), single sign-on (SSO), and privileged access management.",
+            "Compliance Management – Ensuring adherence to GDPR, HIPAA, PCI-DSS, ISO 27001, SOC 2, and mobile app store security guidelines.",
+            "Incident Response & Forensics – Rapid response protocols with detailed forensic analysis and remediation for security breaches.",
+            "Security Awareness Training – Educating development teams and employees on secure coding practices and threat recognition.",
+            "Zero Trust Architecture – Implementing 'never trust, always verify' security model across web, mobile, and cloud infrastructure."
+          ]
+        },
+        {
+          "block_title": "Development & Security Best Practices",
+          "details": [
+            "Secure Development Lifecycle (SDL) – Security integrated at every stage from design to deployment and maintenance.",
+            "Code Security Audits – Regular code reviews and static/dynamic analysis to identify security flaws before production.",
+            "Performance Optimization – Lightning-fast load times with code optimization, CDN integration, and secure caching strategies.",
+            "SEO & Security Balance – SEO-friendly architecture that doesn't compromise security, with proper meta tags and structured data.",
+            "Responsive & Secure Design – Flawless experiences across all devices with security-first responsive design principles.",
+            "API Security Gateway – Protection and management of API endpoints with authentication, rate limiting, and threat detection.",
+            "Disaster Recovery & Business Continuity – Comprehensive backup strategies and recovery plans for web, mobile, and data infrastructure.",
+            "24/7 Monitoring & Support – Round-the-clock security monitoring, performance tracking, and technical support for all platforms."
+          ]
         }
       ]
     }

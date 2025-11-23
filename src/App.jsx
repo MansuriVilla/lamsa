@@ -13,7 +13,6 @@ import Whoweare from "./pages/whoweeare.jsx";
 import Support from "./pages/Support.jsx";
 import ServicesPage from "./pages/ServicDetail.jsx";
 import "./assets/css/App.css";
-import "./assets/js/app.js";
 
 function DynamicTitle() {
   const location = useLocation();

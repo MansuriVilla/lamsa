@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.esm.js";
 import LogoVector from "../../assets/images/Logo-vector-header.svg";
+import BluredLayer from "../BluredLayer/BluredLayer";
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
@@ -119,6 +120,7 @@ export default function Header() {
 
   return (
     <div className="header" ref={headerRef}>
+      <BluredLayer />
       <nav className="navbar navbar-expand-lg header-inner">
         <div className="container-fluid custom-container">
           <Link to="/" className="custom-d-flex navbar-brand custom-a">

@@ -10,3 +10,8 @@ h4 { color: #fff; font-size: clamp(20px, 5vw, 42px ); font-family: 'Raleway'; fo
   padding: 140px 0;
   background: #1a1a1a;
 }
+
+h2{font-size: clamp(26px, 4.3vw, 56px); line-height: clamp(26px, 5vw, 56px); font-weight: bold; text-align: center; text-transform: uppercase;}
+
+
+ 

@@ -10,6 +10,7 @@ export default function Whoweare() {
       <div className="main">
         <Banner title="WHO WE ARE" image={Background} />
         <div className="main__content">
+          <h2>The Glance Of Our Team</h2>
           <Slider
             subHeading="Hello World"
             details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"

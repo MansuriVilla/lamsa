@@ -1,0 +1,111 @@
+.blur-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20vh;
+            pointer-events: none;
+            z-index: -1;
+            transform: scaleY(-1);
+            overflow: hidden;
+        }
+
+        .blur-layer {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            will-change: auto;
+        }
+
+        /* Layer 1 - Lightest blur */
+        .blur-layer:nth-child(1) {
+            z-index: 1;
+            backdrop-filter: blur(0.5px);
+            -webkit-backdrop-filter: blur(0.5px);
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgb(0, 0, 0) 12.5%,
+                    rgb(0, 0, 0) 25%,
+                    rgba(0, 0, 0, 0) 37.5%);
+        }
+
+        /* Layer 2 */
+        .blur-layer:nth-child(2) {
+            z-index: 2;
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 12.5%,
+                    rgb(0, 0, 0) 25%,
+                    rgb(0, 0, 0) 37.5%,
+                    rgba(0, 0, 0, 0) 50%);
+        }
+
+        /* Layer 3 */
+        .blur-layer:nth-child(3) {
+            z-index: 3;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 25%,
+                    rgb(0, 0, 0) 37.5%,
+                    rgb(0, 0, 0) 50%,
+                    rgba(0, 0, 0, 0) 62.5%);
+        }
+
+        /* Layer 4 */
+        .blur-layer:nth-child(4) {
+            z-index: 4;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 37.5%,
+                    rgb(0, 0, 0) 50%,
+                    rgb(0, 0, 0) 62.5%,
+                    rgba(0, 0, 0, 0) 75%);
+        }
+
+        /* Layer 5 */
+        .blur-layer:nth-child(5) {
+            z-index: 5;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 50%,
+                    rgb(0, 0, 0) 62.5%,
+                    rgb(0, 0, 0) 75%,
+                    rgba(0, 0, 0, 0) 87.5%);
+        }
+
+        /* Layer 6 */
+        .blur-layer:nth-child(6) {
+            z-index: 6;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 62.5%,
+                    rgb(0, 0, 0) 75%,
+                    rgb(0, 0, 0) 87.5%,
+                    rgba(0, 0, 0, 0) 100%);
+        }
+
+        /* Layer 7 */
+        .blur-layer:nth-child(7) {
+            z-index: 7;
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 75%,
+                    rgb(0, 0, 0) 87.5%,
+                    rgb(0, 0, 0) 100%);
+        }
+
+        /* Layer 8 - Strongest blur */
+        .blur-layer:nth-child(8) {
+            z-index: 8;
+            backdrop-filter: blur(64px);
+            -webkit-backdrop-filter: blur(64px);
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 87.5%,
+                    rgb(0, 0, 0) 100%);
+        }

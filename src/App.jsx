@@ -12,6 +12,7 @@ import Whatwedo from "./pages/Whatwedo.jsx";
 import Whoweare from "./pages/whoweeare.jsx";
 import Support from "./pages/Support.jsx";
 import ServicesPage from "./pages/ServicDetail.jsx";
+import GetinTouch from "./components/GetinTouch/GetinTouch";
 import "./assets/css/App.css";
 
 function DynamicTitle() {
@@ -63,6 +64,7 @@ export default function App() {
         <Route path="/services/:slug" element={<ServicesPage />} />
         <Route path="/support" element={<Support />} />
       </Routes>
+      <GetinTouch />
       <Footer />
     </Router>
   );

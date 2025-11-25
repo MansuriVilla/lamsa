@@ -1,6 +1,6 @@
 import ParticlesComponent from "../particels/Partical.jsx";
 import "./hero.css";
-
+import Cta from "../cta/Cta.jsx";
 export default function Hero() {
   return (
     <>
@@ -12,11 +12,7 @@ export default function Hero() {
             LAMSA INFOSOLUTIONS: Connecting India with Seamless, High-Speed
             Networks
           </p>
-          <div className="theme_cta">
-            <a href="#" className="cta">
-              Know more
-            </a>
-          </div>
+          <Cta ctatext="Know more" ctalink="#" />
         </div>
       </div>
     </>

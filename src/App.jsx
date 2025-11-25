@@ -13,6 +13,8 @@ import Whoweare from "./pages/whoweeare.jsx";
 import Support from "./pages/Support.jsx";
 import ServicesPage from "./pages/ServicDetail.jsx";
 import GetinTouch from "./components/GetinTouch/GetinTouch";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import "./assets/css/App.css";
 
 function DynamicTitle() {
@@ -55,6 +57,7 @@ function DynamicTitle() {
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <DynamicTitle />
       <Header />
       <Routes>
@@ -66,6 +69,7 @@ export default function App() {
       </Routes>
       <GetinTouch />
       <Footer />
+      <ScrollToTopButton />
     </Router>
   );
 }

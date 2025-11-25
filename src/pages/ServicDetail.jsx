@@ -10,6 +10,7 @@ const ServicesPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     fetch("/services.json")
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch services data");

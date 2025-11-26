@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Banner from "../components/banner/Banner.jsx";
 import Background from "../assets/images/who-we-are-hero.webp";
 

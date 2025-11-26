@@ -1,6 +1,15 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
 :root { --lamsa-primary:digital-dream-primary; --lamsa-regular:digital-dream-regular; --neon-green:#00ff00; --lamsa-seconday:Saira-Regular; --background-color:#101010; }
 body { background-color: rgb(0, 0, 0); margin: 0px; padding: 0px; box-sizing: border-box; color: #fff; }
-.custom-container { max-width: 1660px; margin: 0px auto; width: 100%; padding: 0px 30px; }
+ 
+
+img, picture,video{display:flex; width: 100%; height: auto;}
+
+
+.custom-container { max-width: 1660px; margin: 0px auto; width: 100%; padding: 0px 20px; }
 .custom-d-flex { display: flex; gap: 20px; }
 .flex-column { flex-direction: column; }
 .service_page--inner { display: flex; flex-direction: column; align-items: center; justify-content: center; gap:100px; padding: 100px 0;  }

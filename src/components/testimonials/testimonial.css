@@ -59,3 +59,8 @@
   text-align: center;
   text-transform: uppercase;
 }
+
+
+@media (max-width: 991px) {
+  .testimonial_cards{flex-direction: column;}
+}

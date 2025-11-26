@@ -1,21 +1,329 @@
-.header {position: fixed; width: 100%; top: 0; z-index: 9; transition: .25s linear all; }
-.header .custom-d-flex { align-items: center; }
-/* .header.scrolled { background-color: #000; box-shadow: 0 5px 20px rgba(0,0,0,0.1); } */
-/* .header.header-hidden { transform: translateY(-100%); } */
-/* .header.header-visible { transform: translateY(0); } */
-.header .header-inner { justify-content: space-between; width: 100%; align-items: center; padding: 20px 0; }
-.header .header-inner .custom-a { font-family: var(--lamsa-primary); padding: 0; margin: 0; font-size: clamp(20px, 4vw + 1rem, 28px); text-align: center; color: var(--neon-green); align-items: center; column-gap: 9.2px; }
-.header .header-inner .custom-a img { max-width: clamp(240px, 34vw, 500px); width: 100%; }
-#offcanvasNavbarLabel span:nth-child(2) { display: none; }
-.header-li a { padding: 20px 0; transition: 0.3s all linear; }
-.services-dropdown-menu .dropdown-item { padding: 10px 20px; color: #fff; text-decoration: none; display: block; transition: background 0.2s; }
-.services-dropdown-menu .dropdown-item:hover { background: #151515; color: var(--neon-green); }
-.offcanvas { color: #fff; }
-.header-li a span svg { fill: #fff; transition: 0.3s all linear; }
-.header-li a.site_megaMenu__Active { color: var(--neon-green); }
-.header-li a.site_megaMenu__Active span svg { transform: scaleY(-1); fill: var(--neon-green); }
-@media only screen and (max-width:991px) {
- .offcanvas.offcanvas-end { min-height: 100vh; }
-.header .header-inner .header-right .custom-d-flex { flex-direction: column; }
-.offcanvas { background-color: #000; }
- }
+/* Base Header Styles */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* 
+.header.header-hidden {
+  transform: translateY(-100%);
+}
+
+.header.header-visible {
+  transform: translateY(0);
+} */
+
+.header-li.menu-item-has-children {
+  position: relative;
+}
+
+.header-nav {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.header-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 576px) {
+  .header-container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .header-container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .header-container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .header-container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .header-container {
+    max-width: 1320px;
+  }
+}
+
+/* Logo Styles */
+.logo-link {
+  font-family: var(--lamsa-primary);
+  padding: 0;
+  margin: 0;
+  font-size: clamp(20px, 4vw + 1rem, 28px);
+  text-align: center;
+  color: var(--neon-green);
+  display: flex;
+  align-items: center;
+  column-gap: 9.2px;
+  text-decoration: none;
+}
+
+.logo-link img {
+  max-width: clamp(240px, 34vw, 500px);
+  width: 100%;
+  height: auto;
+}
+
+/* Navigation List (Desktop) */
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.header-li a {
+  padding: 20px 0;
+  transition: 0.3s all linear;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header-li a span svg {
+  fill: #fff;
+  transition: 0.3s all linear;
+}
+
+.header-li a.site_megaMenu__Active {
+  color: var(--neon-green);
+}
+
+.header-li a.site_megaMenu__Active span svg {
+  transform: scaleY(-1);
+  fill: var(--neon-green);
+}
+
+/* Mega Menu / Sub Menu */
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--background-color, #000);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 0;
+  pointer-events: none;
+  z-index: 1000;
+  min-width: 220px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services-dropdown-menu .dropdown-item {
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+}
+
+.services-dropdown-menu .dropdown-item:hover {
+  background: #151515;
+  color: var(--neon-green);
+}
+
+/* Mobile Menu Toggle (Hamburger) */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1002;
+}
+
+.hamburger-box {
+  width: 30px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/* Hamburger Active State */
+.mobile-menu-toggle.active .hamburger-inner {
+  transform: rotate(45deg);
+}
+
+.mobile-menu-toggle.active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+}
+
+/* Mobile Menu Container */
+.mobile-menu-container {
+  display: block; /* Always in DOM, but hidden via transform/visibility on mobile */
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+
+
+  /* Hide the nav list in the header bar on mobile, show it in the drawer */
+  .header-container > .header-right {
+      display: none;
+  }
+
+  .mobile-menu-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 80px;
+    overflow-y: auto;
+  }
+
+  .mobile-menu-container.open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-body {
+    padding: 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .header-li {
+    width: 100%;
+    border-bottom: 1px solid #333;
+  }
+
+  .header-li:last-child {
+    border-bottom: none;
+  }
+
+  .header-li a {
+    padding: 15px 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Mobile Submenu Styles */
+  .sub-menu {
+    position: static;
+    
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    padding-left: 0px;
+    background: transparent;
+    box-shadow: none;
+   
+    transform: none;
+    overflow: hidden;
+  }
+  .services-dropdown-menu .dropdown-item{padding-left: 12px;}
+.sub-menu.mobile-visible{padding-bottom: 20px;}
+
+  .sub-menu.mobile-visible li {
+      opacity: 1;
+      transform: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-menu-container {
+    display: none; /* Hide the mobile container wrapper on desktop if it's separate */
+    /* But wait, in my HTML structure, .header-right is INSIDE .mobile-menu-body inside .mobile-menu-container */
+    /* This is a problem. The structure I wrote in JSX puts the nav inside the mobile menu container ALWAYS. */
+    /* I need to fix the CSS to handle this. */
+    /* On desktop, .mobile-menu-container should NOT be a fixed drawer. It should just be a normal div. */
+    
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    transform: none;
+    padding: 0;
+    overflow: visible;
+    z-index: auto;
+  }
+  
+  .mobile-menu-body {
+      padding: 0;
+  }
+  
+  .header-right {
+      display: block;
+  }
+}
+

@@ -1,5 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.esm.js";
 import LogoVector from "../../assets/images/Logo-vector-header.svg";
 import BluredLayer from "../BluredLayer/BluredLayer";
 import React, { useEffect, useState, useRef } from "react";
@@ -9,6 +7,8 @@ import "./header.css";
 
 export default function Header() {
   const [services, setServices] = useState([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false);
   const headerRef = useRef(null);
   const menuCleanupRef = useRef([]); // To store cleanup functions
 
@@ -20,7 +20,11 @@ export default function Header() {
   }, []);
 
   // Scroll effect
-  // Scroll effect
+  const isMenuOpenRef = useRef(isMenuOpen);
+  useEffect(() => {
+    isMenuOpenRef.current = isMenuOpen;
+  }, [isMenuOpen]);
+
   useEffect(() => {
     const header = headerRef.current;
     if (!header) return;
@@ -36,7 +40,11 @@ export default function Header() {
         header.classList.remove("scrolled");
       }
 
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (
+        currentScrollY > lastScrollY &&
+        currentScrollY > 100 &&
+        !isMenuOpenRef.current
+      ) {
         // Scrolling down & past threshold -> Hide
         header.classList.remove("header-visible");
         header.classList.add("header-hidden");
@@ -95,28 +103,33 @@ export default function Header() {
       gsap.set(items, { opacity: 0, y: 20 });
 
       const onMouseEnter = () => {
-        closeAllMenus(item);
-        megaMenu.classList.add("site_megaMenu__Active");
-        if (link) link.classList.add("site_megaMenu__Active");
-        megaMenu.style.pointerEvents = "auto";
-        animateToAutoHeight(megaMenu);
-        gsap.to(items, {
-          opacity: 1,
-          y: 0,
-          duration: 0.3,
-          stagger: 0.05,
-          ease: "power2.out",
-        });
+        // Only trigger hover on desktop (when mobile menu is NOT open)
+        if (window.innerWidth > 991) {
+          closeAllMenus(item);
+          megaMenu.classList.add("site_megaMenu__Active");
+          if (link) link.classList.add("site_megaMenu__Active");
+          megaMenu.style.pointerEvents = "auto";
+          animateToAutoHeight(megaMenu);
+          gsap.to(items, {
+            opacity: 1,
+            y: 0,
+            duration: 0.3,
+            stagger: 0.05,
+            ease: "power2.out",
+          });
+        }
       };
 
       const onMouseLeave = () => {
-        gsap.to(megaMenu, { height: 0, duration: 0.3, ease: "power1.in" });
-        gsap.to(items, { opacity: 0, y: 20, duration: 0.2 });
-        setTimeout(() => {
-          megaMenu.classList.remove("site_megaMenu__Active");
-          if (link) link.classList.remove("site_megaMenu__Active");
-          megaMenu.style.pointerEvents = "none";
-        }, 300);
+        if (window.innerWidth > 991) {
+          gsap.to(megaMenu, { height: 0, duration: 0.3, ease: "power1.in" });
+          gsap.to(items, { opacity: 0, y: 20, duration: 0.2 });
+          setTimeout(() => {
+            megaMenu.classList.remove("site_megaMenu__Active");
+            if (link) link.classList.remove("site_megaMenu__Active");
+            megaMenu.style.pointerEvents = "none";
+          }, 300);
+        }
       };
 
       item.addEventListener("mouseenter", onMouseEnter);
@@ -135,50 +148,101 @@ export default function Header() {
     };
   }, [services]);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setMobileSubmenuOpen(false); // Close submenu when closing main menu
+  };
+
+  const toggleMobileSubmenu = (e) => {
+    e.preventDefault();
+    setMobileSubmenuOpen(!mobileSubmenuOpen);
+  };
+
+  // Mobile Submenu Animation
+  useEffect(() => {
+    const mobileSubmenu = headerRef.current?.querySelector(
+      ".services-dropdown-menu"
+    );
+    if (!mobileSubmenu) return;
+
+    const items = mobileSubmenu.querySelectorAll("li");
+
+    if (mobileSubmenuOpen) {
+      // Open animation
+      gsap.to(mobileSubmenu, {
+        height: "auto",
+        duration: 0.3,
+        ease: "power1.out",
+      });
+      gsap.to(items, {
+        opacity: 1,
+        y: 0,
+        duration: 0.3,
+        stagger: 0.05,
+        ease: "power2.out",
+        overwrite: true, // Ensure we overwrite any conflicting animations
+      });
+    } else {
+      // Close animation
+      gsap.to(items, {
+        opacity: 0,
+        y: 20,
+        duration: 0.2,
+        overwrite: true,
+      });
+      gsap.to(mobileSubmenu, { height: 0, duration: 0.3, ease: "power1.in" });
+    }
+  }, [mobileSubmenuOpen]);
+
   return (
     <div className="header" ref={headerRef}>
       <BluredLayer />
-      <nav className="navbar navbar-expand-lg header-inner">
-        <div className="container-fluid custom-container">
-          <Link to="/" className="custom-d-flex navbar-brand custom-a">
+      <nav className="header-nav">
+        <div className="header-container">
+          <Link to="/" className="logo-link" onClick={closeMenu}>
             <img src={LogoVector} alt="Lamsa Logo" />
           </Link>
 
           <button
-            className="navbar-toggler"
+            className={`mobile-menu-toggle ${isMenuOpen ? "active" : ""}`}
             type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
+            onClick={toggleMenu}
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="hamburger-box">
+              <span className="hamburger-inner"></span>
+            </span>
           </button>
 
-          <div
-            className="offcanvas offcanvas-end offcanvas-lg"
-            tabIndex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-          >
-            <div className="offcanvas-body custom-body-offcanvas">
-              <div className="header-right ms-auto">
-                <ul className="custom-d-flex">
+          <div className={`mobile-menu-container ${isMenuOpen ? "open" : ""}`}>
+            <div className="mobile-menu-body">
+              <div className="header-right">
+                <ul className="nav-list">
                   <li className="header-li" key="whatwedo">
-                    <Link to="/Whatwedo">WHAT WE DO</Link>
+                    <Link to="/Whatwedo" onClick={closeMenu}>
+                      WHAT WE DO
+                    </Link>
                   </li>
                   <li className="header-li" key="whoweare">
-                    <Link to="/Whoweare">WHO WE ARE</Link>
+                    <Link to="/Whoweare" onClick={closeMenu}>
+                      WHO WE ARE
+                    </Link>
                   </li>
 
                   <li
-                    className="header-li menu-item-has-children position-relative"
+                    className={`header-li menu-item-has-children position-relative ${
+                      mobileSubmenuOpen ? "submenu-open" : ""
+                    }`}
                     key="services"
                   >
                     <Link
                       to="#"
                       className="d-flex align-items-center gap-2 py-3"
-                      onClick={(e) => e.preventDefault()}
+                      onClick={toggleMobileSubmenu}
                     >
                       SERVICES
                       <svg
@@ -189,32 +253,28 @@ export default function Header() {
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
+                        style={{
+                          transform: mobileSubmenuOpen
+                            ? "rotate(180deg)"
+                            : "none",
+                          transition: "transform 0.3s",
+                        }}
                       >
                         <path d="M6 9l6 6 6-6" />
                       </svg>
                     </Link>
 
                     <ul
-                      className="sub-menu services-dropdown-menu"
-                      style={{
-                        position: "absolute",
-                        top: "100%",
-                        left: 0,
-                        background: "var(--background-color)",
-                        boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-                        borderRadius: "8px",
-                        overflow: "hidden",
-                        height: 0,
-                        pointerEvents: "none",
-                        zIndex: 1000,
-                        minWidth: "220px",
-                      }}
+                      className={`sub-menu services-dropdown-menu ${
+                        mobileSubmenuOpen ? "mobile-visible" : ""
+                      }`}
                     >
                       {services.map((service) => (
                         <li key={service.id}>
                           <Link
                             to={`/services/${service.slug}`}
                             className="dropdown-item px-4 py-3"
+                            onClick={closeMenu}
                           >
                             {service.title}
                           </Link>
@@ -224,10 +284,14 @@ export default function Header() {
                   </li>
 
                   <li className="header-li" key="knowledge">
-                    <Link to="/">KNOWLEDGE</Link>
+                    <Link to="/" onClick={closeMenu}>
+                      KNOWLEDGE
+                    </Link>
                   </li>
                   <li className="header-li" key="support">
-                    <Link to="/support">SUPPORT</Link>
+                    <Link to="/support" onClick={closeMenu}>
+                      SUPPORT
+                    </Link>
                   </li>
                 </ul>
               </div>

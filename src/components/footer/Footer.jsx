@@ -40,7 +40,7 @@ export default function Footer() {
                       <ul className="col-ul">
                         <li className="col-li">
                           <a href="#" className="link">
-                            About us
+                            Who We Are
                           </a>
                         </li>
                         <li className="col-li">

@@ -20,16 +20,33 @@ export default function Header() {
   }, []);
 
   // Scroll effect
+  // Scroll effect
   useEffect(() => {
     const header = headerRef.current;
     if (!header) return;
 
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 50) {
         header.classList.add("scrolled");
       } else {
         header.classList.remove("scrolled");
       }
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down & past threshold -> Hide
+        header.classList.remove("header-visible");
+        header.classList.add("header-hidden");
+      } else {
+        // Scrolling up or at top -> Show
+        header.classList.remove("header-hidden");
+        header.classList.add("header-visible");
+      }
+
+      lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);

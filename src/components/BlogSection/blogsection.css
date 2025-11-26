@@ -17,10 +17,10 @@
 
 
 .bottom_cards {
-  display: flex;
-  justify-content: center;
+display: grid;
   width: 100%;
   gap: 30px;
+  grid-template-columns: repeat(auto-fill,minmax(clamp(250px,27vw,500px), 1fr));
 }
 
 .blog_card {

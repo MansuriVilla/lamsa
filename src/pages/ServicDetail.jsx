@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Banner from "../components/banner/Banner.jsx";
 import Background from "../assets/images/who-we-are-hero.webp";
+import SEO from "../components/SEO/SEO.jsx";
 
 const ServicesPage = () => {
   const { slug } = useParams();
@@ -43,6 +44,14 @@ const ServicesPage = () => {
 
   return (
     <>
+      <SEO
+        title={service.title}
+        description={
+          service.description_title ||
+          service.description ||
+          `Learn more about our ${service.title} services.`
+        }
+      />
       <Banner title={service.title} image={Background} />
       <div className="custom-container service_page">
         <div className="service_page--inner ">

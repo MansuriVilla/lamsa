@@ -17,48 +17,11 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import "./assets/css/App.css";
 
-function DynamicTitle() {
-  const location = useLocation();
-  const [services, setServices] = useState([]); // Define state for services
-
-  // Fetch services data
-  useEffect(() => {
-    fetch("/services.json")
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to fetch services data");
-        return response.json();
-      })
-      .then((data) => {
-        setServices(data.services || []); // Store services array
-      })
-      .catch((error) => console.error("Error fetching services:", error));
-  }, []);
-
-  // Set document title based on route
-  useEffect(() => {
-    let pageTitle = "LAMSA INFOSOLUTIONS";
-    if (location.pathname === "/") {
-      pageTitle += " | Home";
-    } else if (location.pathname.toLowerCase().includes("whatwedo")) {
-      pageTitle += " | What We Do";
-    } else if (location.pathname.toLowerCase().includes("whoweare")) {
-      pageTitle += " | Who We Are";
-    } else if (location.pathname.startsWith("/services/")) {
-      const slug = location.pathname.split("/services/")[1];
-      const service = services.find((s) => s.slug === slug);
-      pageTitle += service ? ` | ${service.title}` : " | Service";
-    }
-    document.title = pageTitle;
-  }, [location, services]);
-
-  return null;
-}
-
 export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <DynamicTitle />
+
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

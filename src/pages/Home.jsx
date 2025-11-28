@@ -2,6 +2,7 @@ import Hero from "../components/hero/Hero";
 import Slider from "../components/slider/Slider.jsx";
 import sectionImage from "../assets/images/TempImg.webp";
 import Statistics from "../components/countup/Statistics.jsx";
+import SEO from "../components/SEO/SEO.jsx";
 
 import BlogSection from "../components/BlogSection/BlogSection.jsx";
 import TestimonialSection from "../components/testimonials/TestimonialSection.jsx";
@@ -9,6 +10,10 @@ import TestimonialSection from "../components/testimonials/TestimonialSection.js
 export default function Home() {
   return (
     <div className="main">
+      <SEO
+        title="Home"
+        description="LAMSA INFOSOLUTIONS delivers comprehensive Web Secure Solutions, combining cutting-edge development with enterprise-grade security."
+      />
       <Hero />
       <div className="main__content">
         <Slider

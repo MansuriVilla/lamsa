@@ -3,11 +3,19 @@
 .inner_banner::before { content: ''; position: absolute; display: block; height: 50px; width: 100%; background: linear-gradient(180deg, transparent, #000); bottom: 0; }
 .level { color: #ffffff; display: flex; flex-wrap: wrap; }
 .level .heading { text-wrap: nowrap; font-size: clamp(20px, 2.1vw, 30px); font-weight: 600; margin-top: 10px; margin-bottom: 5px; line-height: clamp(20px, 4vw, 30px); }
-.title { color: #fff; font-size: clamp(22px, 3.1vw, 40px); line-height: clamp(22px, 4vw, 40px); font-weight: 600; }
+.title { color: #fff; font-size: clamp(22px, 3.1vw, 40px); line-height: clamp(22px, 4vw, 40px); font-weight: 600; font-family: 'Raleway'; }
 .level-item.has-text-centered { text-align: center; height: 100%; flex: 1; border-right: 3px solid #fff; padding: clamp(20px, 2vw, 45px); }
 .level-item.has-text-centered div img { max-width: clamp(50px, 8vw, 100px); }
 .slider_right img { max-width: clamp(300px, 40vw, 600px); }
 .section__title { margin-bottom: clamp(25px, 4vw, 50px); }
+
+.level-item__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 .level-item.has-text-centered:nth-child(4) { border-right: 0px; }
 @media only screen and (max-width:768px) {
  .navbar .custom-container { padding: 0 10px; }

@@ -6,6 +6,7 @@ import SEO from "../components/SEO/SEO.jsx";
 
 import BlogSection from "../components/BlogSection/BlogSection.jsx";
 import TestimonialSection from "../components/testimonials/TestimonialSection.jsx";
+import ServiceSection from "../components/ServiceSection/ServiceSection.jsx";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
           details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
           sectionImage={sectionImage}
         />
+        <ServiceSection />
         <TestimonialSection />
         <BlogSection />
       </div>

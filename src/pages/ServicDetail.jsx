@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Banner from "../components/banner/Banner.jsx";
-import Background from "../assets/images/who-we-are-hero.webp";
 import SEO from "../components/SEO/SEO.jsx";
 
 const ServicesPage = () => {
@@ -52,7 +51,7 @@ const ServicesPage = () => {
           `Learn more about our ${service.title} services.`
         }
       />
-      <Banner title={service.title} image={Background} />
+      <Banner title={service.title} image={service.image} />
       <div className="custom-container service_page">
         <div className="service_page--inner ">
           <div className={`service_top service_${service.slug}-top`}>

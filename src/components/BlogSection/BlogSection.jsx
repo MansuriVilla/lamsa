@@ -1,4 +1,5 @@
 import "./blogsection.css";
+import { Link } from "react-router-dom";
 import cyberSecurityImg from "../../assets/images/cyber_security_shield.png";
 import aiNeuralImg from "../../assets/images/ai_neural_network.png";
 import cloudComputingImg from "../../assets/images/cloud_computing_tech.png";
@@ -7,7 +8,7 @@ export default function BlogSection() {
   const blogData = [
     {
       id: 1,
-      link: "#",
+      slug: "zero-trust-architecture",
       title: "Zero Trust Architecture: The Future of Cybersecurity",
       description:
         "Explore how Zero Trust security models are revolutionizing enterprise protection by eliminating implicit trust and continuously verifying every access request.",
@@ -16,7 +17,7 @@ export default function BlogSection() {
     },
     {
       id: 2,
-      link: "#",
+      slug: "ai-powered-threat-detection",
       title: "AI-Powered Threat Detection in 2025",
       description:
         "Discover how artificial intelligence and machine learning algorithms are transforming cybersecurity by identifying and neutralizing threats in real-time.",
@@ -25,7 +26,7 @@ export default function BlogSection() {
     },
     {
       id: 3,
-      link: "#",
+      slug: "securing-multi-cloud-environments",
       title: "Securing Multi-Cloud Environments",
       description:
         "Learn best practices for protecting data across multiple cloud platforms and implementing robust security frameworks for hybrid infrastructure.",
@@ -43,7 +44,11 @@ export default function BlogSection() {
         <div className="blog_bottom">
           <div className="bottom_cards">
             {blogData.map((blog) => (
-              <a className="blog_card" href={blog.link} key={blog.id}>
+              <Link
+                className="blog_card"
+                to={`/blog/${blog.slug}`}
+                key={blog.id}
+              >
                 <div className="blog_card_inner">
                   <div className="blog_card_top">
                     <img src={blog.image} alt={blog.alt} />
@@ -53,7 +58,7 @@ export default function BlogSection() {
                     <p>{blog.description}</p>
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

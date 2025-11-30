@@ -1,11 +1,12 @@
 import "./Cta.css";
+import { Link } from "react-router-dom";
 
 export default function Cta(props) {
   return (
     <div className="theme_cta">
-      <a href={props.ctalink} className="cta">
+      <Link to={props.ctalink} className="cta">
         {props.ctatext}
-      </a>
+      </Link>
     </div>
   );
 }

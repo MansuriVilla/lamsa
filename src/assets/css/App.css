@@ -19,7 +19,8 @@ img, picture,video{display:flex; width: 100%; height: auto;}
 #customParticales canvas { position: relative; z-index: -1; height: auto !important; }
 .service_bottom-title { color: var(--neon-green); margin-bottom: 15px; }
 .service_block-title { font-size: 24px; }
-.banner__title{max-width: 900px; width: 100%;}
+.banner__title{max-width: calc(100% - 30%); width: 100%; position: relative;
+  z-index: 2;}
 .form_group input{border-bottom: 1px solid #00ff00;}
 .service_center{width: 100%;}
 

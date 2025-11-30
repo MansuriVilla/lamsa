@@ -1,4 +1,4 @@
-.hero-main { height: clamp(60vh, 100vw, 45vw); width: 100%; overflow: hidden; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 50px; }
+.hero-main { height: clamp(80vh, 100vw, 45vw); width: 100%; overflow: hidden; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 50px; }
 .hero-main p { font-size: clamp(20px, 2vw, 24px); max-width: clamp(360px, 47vw, 580px); line-height: 34px; width: 100%; margin: 0 auto; text-align: center; }
 .hero-main .hero__content { display: flex; flex-direction: column; gap: clamp(25px, 3.9vw, 50px); align-items: center; }
 

@@ -41,12 +41,12 @@
   object-position: center center;
 }
 .service_item-content .service_content-title {
-  font-size: 26px;
+  font-size: clamp(20px,1.6vw,26px);
   line-height: 1;
 }
 
 .service_item-content .service_content-description {
-  font-size: 18px;
+  font-size: clamp(16px,1.2vw,18px);
   line-height: 1.6;
 }
 

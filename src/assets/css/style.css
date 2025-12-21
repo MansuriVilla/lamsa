@@ -14,7 +14,9 @@
 .title { color: #fff; font-size: clamp(22px, 3.1vw, 40px); line-height: clamp(22px, 4vw, 40px); font-weight: 600; font-family: 'Raleway'; }
 .level-item.has-text-centered { text-align: center; height: 100%; flex: 1; border-right: 3px solid #fff; padding: clamp(20px, 2vw, 45px); }
 .level-item.has-text-centered div img { max-width: clamp(50px, 8vw, 100px); }
-.slider_right img { max-width: clamp(300px, 40vw, 600px); }
+.slider_right img { max-width: clamp(300px, 40vw, 600px); aspect-ratio: 16/17;
+  object-fit: cover;
+  border-radius: 30px; }
 .section__title { margin-bottom: clamp(25px, 4vw, 50px); }
 
 .level-item__inner {

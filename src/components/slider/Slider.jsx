@@ -12,7 +12,10 @@ export default function Slider(props) {
             <div className="item">
               <div className="slider__content_main">
                 <div className="slider_left">
-                  <h4 className="slider_title">{props.subHeading}</h4>
+                  <div className="slider_left-top">
+                    <h4 className="slider_title">{props.subHeading}</h4>
+                    <span className="slider_caption">{props.designation}</span>
+                  </div>
                   <p>{props.details}</p>
                 </div>
                 <div className="slider_right">

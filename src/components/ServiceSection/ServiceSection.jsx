@@ -40,7 +40,6 @@ export default function ServiceSection() {
                       decoding="async"
                     />
                   </div>
-                  <BluredLayer />
                   <div className="service_item-content">
                     <h3 className="service_content-title">{service.title}</h3>
                     <p className="service_content-description">

@@ -50,6 +50,7 @@
 .service_item-content .service_content-title {
   font-size: clamp(20px,1.6vw,26px);
   line-height: 1;
+  min-height: 52px;
 }
 
 .service_item-content .service_content-description {

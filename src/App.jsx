@@ -13,6 +13,8 @@ import Whoweare from "./pages/whoweeare.jsx";
 import Support from "./pages/Support.jsx";
 import ServicesPage from "./pages/ServicDetail.jsx";
 import BlogDetail from "./pages/BlogDetail.jsx";
+import BlogsCollection from "../blogs/BlogsCollection.jsx";
+
 import GetinTouch from "./components/GetinTouch/GetinTouch";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
@@ -26,10 +28,12 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Whatwedo" element={<Whatwedo />} />
-        <Route path="/Whoweare" element={<Whoweare />} />
+        <Route path="/what-we-do" element={<Whatwedo />} />
+        <Route path="/who-we-are" element={<Whoweare />} />
         <Route path="/services/:slug" element={<ServicesPage />} />
+        <Route path="/blogs" element={<BlogsCollection />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
+
         <Route path="/support" element={<Support />} />
       </Routes>
       <GetinTouch />

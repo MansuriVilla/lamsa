@@ -1,0 +1,207 @@
+.blogs-collection {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* Hero Section */
+.blogs-collection__hero {
+  padding: 160px 40px 80px;
+  background: radial-gradient(circle at top right, rgba(102, 126, 234, 0.15), transparent 60%);
+  text-align: center;
+}
+
+.blogs-collection__hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blogs-collection__hero-title {
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 1;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  background: linear-gradient(to right, #fff, rgba(255,255,255,0.5));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blogs-collection__hero-subtitle {
+  font-size: clamp(18px, 1.5vw, 22px);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.blogs-collection__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+.blogs-collection__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Card Styling */
+.blogs-collection__card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  text-decoration: none;
+  color: inherit;
+}
+
+.blogs-collection__card:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.blogs-collection__card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.blogs-collection__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.blogs-collection__card:hover .blogs-collection__card-image {
+  transform: scale(1.05);
+}
+
+.blogs-collection__card-category {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blogs-collection__card-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blogs-collection__card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 16px;
+}
+
+.blogs-collection__card-meta .dot {
+  color: var(--neon-green);
+}
+
+.blogs-collection__card-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.blogs-collection__card:hover .blogs-collection__card-title {
+  color: var(--neon-green);
+}
+
+.blogs-collection__card-excerpt {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.blogs-collection__card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--neon-green);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.blogs-collection__card-footer svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.blogs-collection__card:hover .blogs-collection__card-footer svg {
+  transform: translateX(5px);
+}
+
+/* Loading State */
+.blogs-collection__loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .blogs-collection__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .blogs-collection__hero {
+    padding: 120px 20px 60px;
+  }
+  
+  .blogs-collection__container {
+    padding: 0 20px;
+  }
+  
+  .blogs-collection__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .blogs-collection__card-content {
+    padding: 24px;
+  }
+}

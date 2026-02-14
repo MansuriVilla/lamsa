@@ -11,6 +11,7 @@ export default function Banner(props) {
       }}
     >
       <h1 className="banner__title">{props.title}</h1>
+      {props.subtitle && <p className="banner__subtitle">{props.subtitle}</p>}
     </div>
   );
 }

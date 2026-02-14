@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SEO from "../components/SEO/SEO.jsx";
-import "./blogdetail.css";
+import "../assets/css/blogdetail.css";
 
 const BlogDetail = () => {
   const { slug } = useParams();

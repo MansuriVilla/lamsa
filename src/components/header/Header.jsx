@@ -64,7 +64,7 @@ export default function Header() {
   // GSAP Mega Menu Animation – safe for HMR
   useEffect(() => {
     const menuItems = headerRef.current?.querySelectorAll(
-      ".menu-item-has-children"
+      ".menu-item-has-children",
     );
     if (!menuItems || services.length === 0) return;
 
@@ -165,7 +165,7 @@ export default function Header() {
   // Mobile Submenu Animation
   useEffect(() => {
     const mobileSubmenu = headerRef.current?.querySelector(
-      ".services-dropdown-menu"
+      ".services-dropdown-menu",
     );
     if (!mobileSubmenu) return;
 
@@ -223,12 +223,12 @@ export default function Header() {
               <div className="header-right">
                 <ul className="nav-list">
                   <li className="header-li" key="whatwedo">
-                    <Link to="/Whatwedo" onClick={closeMenu}>
+                    <Link to="/what-we-do" onClick={closeMenu}>
                       WHAT WE DO
                     </Link>
                   </li>
                   <li className="header-li" key="whoweare">
-                    <Link to="/Whoweare" onClick={closeMenu}>
+                    <Link to="/who-we-are" onClick={closeMenu}>
                       WHO WE ARE
                     </Link>
                   </li>
@@ -284,7 +284,7 @@ export default function Header() {
                   </li>
 
                   <li className="header-li" key="knowledge">
-                    <Link to="/" onClick={closeMenu}>
+                    <Link to="/blogs" onClick={closeMenu}>
                       KNOWLEDGE
                     </Link>
                   </li>

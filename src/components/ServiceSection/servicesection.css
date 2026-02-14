@@ -39,6 +39,10 @@
   width: 100%;
 }
 
+.service_bottom {
+  width: 100%;
+}
+
 
 .service_icon .service_item-image {
   aspect-ratio: 16/12;

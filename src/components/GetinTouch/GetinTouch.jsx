@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 export default function GetinTouch() {
   // hide this section for support page
   const location = useLocation();
-  if (location.pathname === "/support") {
+  if (location.pathname === "/pages/support") {
     return null;
   }
 
@@ -18,7 +18,7 @@ export default function GetinTouch() {
             Please feel free to contact us using the form below or by phone or
             email.
           </p>
-          <Cta ctatext="Start A Project" ctalink="/support" />
+          <Cta ctatext="Start A Project" ctalink="/pages/support" />
         </div>
       </div>
     </div>

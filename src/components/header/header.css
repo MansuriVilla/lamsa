@@ -27,6 +27,7 @@
 
 .header-container {
   width: 100%;
+  max-width: 1660px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -35,7 +36,7 @@
   justify-content: space-between;
   align-items: center;
 }
-
+/* 
 @media (min-width: 576px) {
   .header-container {
     max-width: 540px;
@@ -60,7 +61,7 @@
   .header-container {
     max-width: 1320px;
   }
-}
+} */
 
 /* Logo Styles */
 .logo-link {
@@ -104,6 +105,11 @@
   gap: 5px;
 }
 
+.header-li__dropdown{display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;}
+
 .header-li a span svg {
   fill: #fff;
   transition: 0.3s all linear;
@@ -117,6 +123,11 @@
   transform: scaleY(-1);
   fill: var(--neon-green);
 }
+
+.dropdown-arrow-trigger {
+  display: flex;
+}
+
 
 /* Mega Menu / Sub Menu */
 .sub-menu {

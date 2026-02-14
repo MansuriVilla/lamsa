@@ -1,7 +1,7 @@
-import SEO from "../src/components/SEO/SEO.jsx";
-import "../src/assets/css/blogscollection.css";
-import Banner from "../src/components/banner/Banner.jsx";
-import BlogCard from "../src/components/BlogCard/BlogCard.jsx";
+import SEO from "../components/SEO/SEO.jsx";
+import "../assets/css/blogscollection.css";
+import Banner from "../components/banner/Banner.jsx";
+import BlogCard from "../components/BlogCard/BlogCard.jsx";
 
 const BlogsCollection = () => {
   return (

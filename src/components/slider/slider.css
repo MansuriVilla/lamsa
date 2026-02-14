@@ -1,4 +1,4 @@
-.slider__content_main { display: flex; flex-wrap: wrap; justify-content: space-between; width: 100%; align-items: center; }
+.slider__content_main { display: flex; flex-wrap: wrap; justify-content: space-between; width: 100%; align-items: center; row-gap: 30px;}
 .slider__content_main .slider_left-top { margin-bottom: clamp(15px, 1.8vw, 30px); }
 .slider__content_main h4 { margin-bottom: 12px; }
 .slider__content_main p { max-width: clamp(200px, 50vw, 712px); width: 100%; font-size: clamp(16px, 1.9vw, 22px) ; line-height: 150%; }

@@ -5,7 +5,9 @@ export default function Slider(props) {
     <>
       <div className="slider__section">
         <div className="section__title">
-          <h3 className="title">{props.sectionTitle}</h3>
+          {props.sectionTitle && (
+            <h3 className="title">{props.sectionTitle}</h3>
+          )}
         </div>
         <div className="slider_main">
           <div className="custom-container">
@@ -19,7 +21,7 @@ export default function Slider(props) {
                   <p>{props.details}</p>
                 </div>
                 <div className="slider_right">
-                  <img src={props.sectionImage} alt="Section" />
+                  <img src={props.sectionImage} alt={props.subHeading} />
                 </div>
               </div>
             </div>

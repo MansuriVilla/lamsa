@@ -50,13 +50,8 @@ export default function Footer() {
                     <div className="cols">
                       <ul className="col-ul">
                         <li className="col-li">
-                          <Link to="/who-we-are" className="link">
+                          <Link to="/pages/who-we-are" className="link">
                             Who We Are
-                          </Link>
-                        </li>
-                        <li className="col-li">
-                          <Link to="/what-we-do" className="link">
-                            What we do
                           </Link>
                         </li>
                         <li className="col-li">
@@ -179,7 +174,9 @@ export default function Footer() {
             </div>
           </div>
           <div className="footer-bottom">
-            <img src={FooterVector} alt="Lamsa Vector" />
+            <Link to="/">
+              <img src={FooterVector} alt="Lamsa Vector" />
+            </Link>
           </div>
         </div>
       </div>

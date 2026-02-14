@@ -12,7 +12,7 @@ export default function Hero() {
             LAMSA INFOSOLUTIONS: Connecting India with Seamless, High-Speed
             Networks
           </p>
-          <Cta ctatext="Know more" ctalink="#" />
+          <Cta ctatext="Know more" ctalink="/collections/services" />
         </div>
       </div>
     </>

@@ -96,7 +96,8 @@ export default function Header() {
 
     menuItems.forEach((item) => {
       const megaMenu = item.querySelector(".sub-menu");
-      const link = item.querySelector("a"); // The main <a> that triggers dropdown
+      const link = item.querySelector("a"); // The main <a>
+      const arrowTrigger = item.querySelector(".dropdown-arrow-trigger");
       if (!megaMenu) return;
 
       const items = megaMenu.querySelectorAll("li");
@@ -132,12 +133,20 @@ export default function Header() {
         }
       };
 
-      item.addEventListener("mouseenter", onMouseEnter);
+      if (arrowTrigger) {
+        arrowTrigger.addEventListener("mouseenter", onMouseEnter);
+      } else {
+        item.addEventListener("mouseenter", onMouseEnter);
+      }
       item.addEventListener("mouseleave", onMouseLeave);
 
       // Store for cleanup
       menuCleanupRef.current.push(() => {
-        item.removeEventListener("mouseenter", onMouseEnter);
+        if (arrowTrigger) {
+          arrowTrigger.removeEventListener("mouseenter", onMouseEnter);
+        } else {
+          item.removeEventListener("mouseenter", onMouseEnter);
+        }
         item.removeEventListener("mouseleave", onMouseLeave);
       });
     });
@@ -222,47 +231,44 @@ export default function Header() {
             <div className="mobile-menu-body">
               <div className="header-right">
                 <ul className="nav-list">
-                  <li className="header-li" key="whatwedo">
-                    <Link to="/what-we-do" onClick={closeMenu}>
-                      WHAT WE DO
-                    </Link>
-                  </li>
-                  <li className="header-li" key="whoweare">
-                    <Link to="/who-we-are" onClick={closeMenu}>
-                      WHO WE ARE
-                    </Link>
-                  </li>
-
                   <li
                     className={`header-li menu-item-has-children position-relative ${
                       mobileSubmenuOpen ? "submenu-open" : ""
                     }`}
                     key="services"
                   >
-                    <Link
-                      to="#"
-                      className="d-flex align-items-center gap-2 py-3"
-                      onClick={toggleMobileSubmenu}
-                    >
-                      SERVICES
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        style={{
-                          transform: mobileSubmenuOpen
-                            ? "rotate(180deg)"
-                            : "none",
-                          transition: "transform 0.3s",
-                        }}
+                    <div className="header-li__dropdown">
+                      <Link
+                        to="/collections/services"
+                        className="nav-link-text d-flex align-items-center h-100"
+                        onClick={closeMenu}
                       >
-                        <path d="M6 9l6 6 6-6" />
-                      </svg>
-                    </Link>
+                        SERVICES
+                      </Link>
+                      <span
+                        className="dropdown-arrow-trigger d-flex align-items-center h-100 cursor-pointer p-2"
+                        onClick={toggleMobileSubmenu}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          style={{
+                            transform: mobileSubmenuOpen
+                              ? "rotate(180deg)"
+                              : "none",
+                            transition: "transform 0.3s",
+                          }}
+                        >
+                          <path d="M6 9l6 6 6-6" />
+                        </svg>
+                      </span>
+                    </div>
 
                     <ul
                       className={`sub-menu services-dropdown-menu ${
@@ -282,6 +288,11 @@ export default function Header() {
                       ))}
                     </ul>
                   </li>
+                  <li className="header-li" key="whoweare">
+                    <Link to="/pages/who-we-are" onClick={closeMenu}>
+                      WHO WE ARE
+                    </Link>
+                  </li>
 
                   <li className="header-li" key="knowledge">
                     <Link to="/blogs" onClick={closeMenu}>
@@ -289,7 +300,7 @@ export default function Header() {
                     </Link>
                   </li>
                   <li className="header-li" key="support">
-                    <Link to="/support" onClick={closeMenu}>
+                    <Link to="/pages/support" onClick={closeMenu}>
                       SUPPORT
                     </Link>
                   </li>

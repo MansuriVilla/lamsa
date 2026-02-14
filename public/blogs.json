@@ -18,7 +18,8 @@
         "Enterprise Security",
         "Authentication"
       ],
-      "featuredImage": "/src/assets/images/cyber_security_shield.png",
+      "featuredImage": "/cyber_security_shield.png",
+
       "content": {
         "introduction": "Zero Trust Architecture represents a paradigm shift in cybersecurity, moving away from the traditional perimeter-based security model to a more robust approach where trust is never assumed and verification is always required. In today's threat landscape, where attackers can breach perimeters and move laterally within networks, the Zero Trust model provides a comprehensive framework for protecting modern enterprises.",
         "sections": [
@@ -85,7 +86,8 @@
       "readTime": "7 min read",
       "category": "Artificial Intelligence",
       "tags": ["AI", "Machine Learning", "Threat Detection", "Automation"],
-      "featuredImage": "/src/assets/images/ai_neural_network.png",
+      "featuredImage": "/ai_neural_network.png",
+
       "content": {
         "introduction": "Artificial Intelligence and Machine Learning are revolutionizing how organizations detect, analyze, and respond to cyber threats. These technologies enable real-time threat identification and automated response mechanisms that far exceed human capabilities, making them essential tools in the modern cybersecurity arsenal.",
         "sections": [
@@ -152,7 +154,8 @@
       "readTime": "9 min read",
       "category": "Cloud Security",
       "tags": ["Cloud Security", "Multi-Cloud", "Infrastructure", "Compliance"],
-      "featuredImage": "/src/assets/images/cloud_computing_tech.png",
+      "featuredImage": "/cloud_computing_tech.png",
+
       "content": {
         "introduction": "As organizations increasingly adopt multi-cloud strategies, securing data and applications across different cloud platforms presents unique challenges. Understanding and implementing robust security frameworks is critical for protecting hybrid infrastructure while maintaining the agility and cost benefits that drove cloud adoption in the first place.",
         "sections": [

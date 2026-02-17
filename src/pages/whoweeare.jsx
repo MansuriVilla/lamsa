@@ -23,15 +23,15 @@ export default function Whoweare() {
             sectionImage={sectionImage}
           />
           <Slider
-            subHeading="Adnan Mansuri"
-            designation="FRONT-END DEVELOPER"
-            details="Adnan Mansuri is a dedicated Front-End Developer with 1.6+ years of professional experience building responsive, interactive, and highly user-centric web applications. Currently working full-time at AMPV Media, where he creates and maintains modern, performant interfaces using HTML, CSS, JavaScript, React, and GSAP — delivering smooth animations, micro-interactions, and polished user experiences that drive engagement. Alongside his full-time role, he selectively takes on freelance projects, consistently providing clean, scalable, pixel-perfect code and solutions tailored to client needs. Passionate about front-end craftsmanship, performance optimization, and crafting intuitive, visually compelling digital experiences."
+            subHeading="Abbas Shaikh"
+            designation="Software Engineer"
+            details="Abbas Shaikh is a driven Python developer with more than 3 years of focused experience building robust, high-performance backend applications using Django and FastAPI. He maintains excellent code quality through disciplined static analysis with pylint, flake8, and mypy, and ensures reliability with thorough unit testing using pytest. Hands-on with cloud infrastructure — particularly AWS S3 and EC2 — to deliver scalable, production-ready solutions. Strong expertise in containerization with Docker and orchestration using Docker Compose. Passionate about clean architecture, best practices, and shipping maintainable, performant systems that scale effectively."
             sectionImage={sectionImage}
           />
           <Slider
-            subHeading="Team Member Name 4"
-            designation="Member 4 designation"
-            details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+            subHeading="Adnan Mansuri"
+            designation="Front-End Developer"
+            details="Adnan Mansuri is a dedicated Front-End Developer with 2+ years of professional experience building responsive, interactive, and highly user-centric web applications. Currently working full-time at AMPV Media, where he creates and maintains modern, performant interfaces using HTML, CSS, JavaScript, React, and GSAP — delivering smooth animations, micro-interactions, and polished user experiences that drive engagement. Alongside his full-time role, he selectively takes on freelance projects, consistently providing clean, scalable, pixel-perfect code and solutions tailored to client needs. Passionate about front-end craftsmanship, performance optimization, and crafting intuitive, visually compelling digital experiences."
             sectionImage={sectionImage}
           />
         </div>

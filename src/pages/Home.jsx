@@ -18,7 +18,7 @@ export default function Home() {
       <Hero />
       <div className="main__content">
         <Slider
-          sectionTitle="Section Title"
+          sectionTitle="Vision Section"
           subHeading="Hello World"
           details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
           sectionImage={sectionImage}
@@ -32,7 +32,7 @@ export default function Home() {
           ]}
         />
         <Slider
-          sectionTitle="Section Title"
+          sectionTitle="Meet The Team Section"
           subHeading="Hello World"
           details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
           sectionImage={sectionImage}
